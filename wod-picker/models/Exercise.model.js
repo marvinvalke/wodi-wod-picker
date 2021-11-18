@@ -13,5 +13,5 @@ const ExerciseSchema = new Schema ({
     link: String,
 }),
 
-const ExerciseModel = model("Exercise" , ExerciseSchema);
-module.exports = ExerciseModel;
+const Exercise = model("Exercise" , ExerciseSchema);
+module.exports = Exercise;

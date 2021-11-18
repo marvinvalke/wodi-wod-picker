@@ -20,7 +20,8 @@ require("./config")(app);
 
 // default value for title local
 const projectName = "wod-picker";
-const capitalized = (string) => string[0].toUpperCase() + string.slice(1).toLowerCase();
+const capitalized = (string) =>
+  string[0].toUpperCase() + string.slice(1).toLowerCase();
 
 app.locals.title = `${capitalized(projectName)}`;
 
@@ -29,8 +30,12 @@ const index = require("./routes/index");
 app.use("/", index);
 
 // IMPORT AUTHENTIFICATION ROUTES
-const authRoutes = require('./routes/auth.routes');
-app.use('/' , authRoutes)
+const authRoutes = require("./routes/auth.routes");
+app.use("/", authRoutes);
+
+// IMPORT WOD ROUTES
+const wodRoutes = require("./routes/wod.routes");
+app.use("/", wodRoutes);
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
