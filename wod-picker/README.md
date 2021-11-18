@@ -102,10 +102,10 @@ When creating the WoD you can select some exercises from the EXERCISES collectio
 # ROUTES
 - MAIN
     - Get / > index.hbs
-    - Get /auth/create-account > account-form.hbs
-    - Post /auth/create-account > account-form.hbs
+    - Get /auth/register > register.hbs
+    - Post /auth/register > register.hbs
     - Get /auth/login > log-in-form.hbs
-    - Post //auth/login > log-in-form.hbs
+    - Post /auth/login > log-in-form.hbs
 
 
 - EXERCISE.ROUTES.JS
@@ -129,12 +129,12 @@ When creating the WoD you can select some exercises from the EXERCISES collectio
 - index.hbs
     - nav bar
     - log in
-    - create account
+    - register
 - log-in.hbs
     - username
     - password
     - enter btn
-- create-account.hbs
+- register.hbs
     - username
     - email
     - password

@@ -3,7 +3,7 @@ const { Schema, model } = require("mongoose");
 // TODO: Please make sure you edit the user model to whatever makes sense in this case
 const UserSchema = new Schema(
   {
-    userName: {
+    username: {
       type: String,
       require: true,
       unique: true,
