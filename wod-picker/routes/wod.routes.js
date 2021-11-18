@@ -3,6 +3,15 @@ const Wod = require("../models/Wod.model");
 const Exercise = require("../models/Exercise.model");
 // IMPORT EXPRESS
 const router = require("express").Router();
+// CHECK IF LOGGED IN :
+const isLoggedIn = (req, res, next) => {
+    if (req.session.myProperty) {
+      // IF LOG IN SUCCED -> GO TO THE GET /ACCOUNT
+      next();
+    } else {
+      res.redirect("/login");
+    }
+  };
 
 //-------------------------------PROTECTED ROUTES------------------------------------
 // USER CAN SEE ALL HIS WODS

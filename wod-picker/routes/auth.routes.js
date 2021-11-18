@@ -2,7 +2,7 @@
 const router = require("express").Router();
 
 // IMPORT USERMODEL
-const UserModel = require("../models/User.model");
+const User = require("../models/User.model");
 
 // IMPORT BCRYPT
 const bcrypt = require("bcryptjs");
@@ -32,7 +32,7 @@ router.post("/register", (req, res, next) => {
   let salt = bcrypt.genSaltSync(10);
   let hash = bcrypt.hashSync(password, salt);
   // CREATE THE USER IN MONGODB
-  UserModel.create({ username, email, password: hash, personalTrainer })
+  User.create({ username, email, password: hash, personalTrainer })
     .then(() => {
       // ONCE USER CREATED REDIRECT TO HOMEPAGE
       res.redirect("/");
@@ -55,7 +55,7 @@ router.post("/login", (req, res, next) => {
   const { username, password } = req.body;
 
   //VALIDATION
-  UserModel.find({ username })
+  User.find({ username })
     .then((usernameResponse) => {
       //IF USERNAME EXIST THEN CHECK IF THE PASSWORD IS MATCHING
       if (usernameResponse.length) {
