@@ -6,7 +6,7 @@ const WodSchema = new Schema ({
     environement: String,
     exercises: {
         type: Object.Types.ObjectId,
-        ref: 'EXERCISES'
+        ref: 'Exercise'
     },
     rounds: Number,
     duration: Number,

@@ -4,7 +4,11 @@ const ExerciseSchema = new Schema ({
     name: String,
     difficultyRate: Number,
     numberOfRep: Number,
-    targetedMuscle: Array,
+    targetedMuscle: {
+        type: String,
+        enum:['Full-body','Arms' , 'Abs' , 'Back' , 'Legs'],
+        default: 'Full-body'
+    },
     img: String,
     link: String,
 }),
