@@ -1,5 +1,6 @@
 const { Schema, model } = require("mongoose");
 
+
 const ExerciseSchema = new Schema ({
     name: String,
     difficultyRate: Number,
@@ -11,7 +12,7 @@ const ExerciseSchema = new Schema ({
     },
     img: String,
     link: String,
-}),
+});
 
-const ExerciseModel = model("Exercise" , ExerciseSchema);
-module.exports = ExerciseModel;
+const Exercise = model("exercise" , ExerciseSchema);
+module.exports = Exercise;
