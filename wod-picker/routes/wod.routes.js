@@ -68,7 +68,7 @@ router.get(
       .populate("exercises")
       .then((theWod) => {
         // GET TO THE DETAILLED WOD
-        console.log('This is the wod' , theWod)
+        console.log("This is the wod", theWod);
         res.render("../views/wod/wod-details.hbs", { theWod });
       })
       .catch((err) => {

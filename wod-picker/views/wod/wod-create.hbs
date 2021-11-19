@@ -4,7 +4,7 @@
         <label class="form-label">1 - Choose a cool name:</label>
         <input class="form-control" type="text" name="name">
         <br>
-        <p>Choose your environement:</p>
+        <p>2 - Choose your environement:</p>
         <input type="checkbox" id="outside" name="environement" value="Outside">
         <label for="environement"> Outside</label>
         <br>
@@ -13,6 +13,7 @@
         <br>
         <label class="form-label">3 - How many rounds:</label>
         <select name="rounds" id="rounds">
+            <option>Rounds</option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -27,7 +28,8 @@
 
         <br>
         <label class="form-label">4 - For how long:</label>
-        <select name="rounds" id="rounds">
+        <select name="duration" id="duration">
+            <option value="5">Min</option>
             <option value="5">5</option>
             <option value="10">10</option>
             <option value="15">15</option>
@@ -41,32 +43,52 @@
             <option value="45">55</option>
             <option value="50">60</option>
         </select>
-        <p>Minutes</p>
         <br>
-        <label for='intensity' class="form-label">5 - How hard it is:</label>
+        <label for='intensity' class="form-label">5 - How hard:</label>
         <select name="intensity">
+            <option>Level</option>
             <option>Easy</option>
             <option>Medium</option>
             <option>Hard</option>
             <option>Insane</option>
         </select>
         <br>
-        <label for="exercise">Select some exercise for your WoD:</label>
+        <p>Select your exercises:</p>
+        <label for="exercise"></label>
         <select name="exercises">
+            <option value="">Select your first exercise</option>
             {{#each allExercises}}
             <option value="{{this._id}}">{{this.name}}</option>
             {{/each}}
         </select>
         <br>
-        <label for="exercise">Select another exercise for your WoD:</label>
+        <label for="exercise"></label>
         <select name="exercises">
+            <option value="">Select your second exercise:</option>
             {{#each allExercises}}
             <option value="{{this._id}}">{{this.name}}</option>
             {{/each}}
         </select>
         <br>
-        <label for="exercise">One last one for the fun:</label>
+        <label for="exercise"></label>
         <select name="exercises">
+            <option value="">Let's add a third:</option>
+            {{#each allExercises}}
+            <option value="{{this._id}}">{{this.name}}</option>
+            {{/each}}
+        </select>
+        <br>
+        <label for="exercise"></label>
+        <select name="exercises">
+            <option value="">Come on you can do better than 3:</option>
+            {{#each allExercises}}
+            <option value="{{this._id}}">{{this.name}}</option>
+            {{/each}}
+        </select>
+        <br>
+        <label for="exercise"></label>
+        <select name="exercises">
+            <option value="">OK! One last one for the fun:</option>
             {{#each allExercises}}
             <option value="{{this._id}}">{{this.name}}</option>
             {{/each}}
