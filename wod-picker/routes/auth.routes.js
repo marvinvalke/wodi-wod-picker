@@ -11,21 +11,21 @@ const bcrypt = require("bcryptjs");
 
 //Test route for user PROFILE
 
-router.get ("/profile", (req, res, next) =>{
+router.get("/profile", (req, res, next) => {
   //Show the user profile page
-  res.render("../views/auth/profile.hbs")
+  res.render("auth/profile.hbs");
 });
 
-router.get("/welcome", (req, res, next) =>{
+router.get("/welcome", (req, res, next) => {
   //Show the homepage for the signed in user
-  res.render("../views/auth/account.hbs")
-})
+  res.render("auth/account.hbs");
+});
 
 //-----------------REGISTER-----------------
 // GET REQUEST FOR REGISTER
 router.get("/register", (req, res, next) => {
   //SHOW THE FORM FOR REGISTERING
-  res.render("../views/auth/register.hbs");
+  res.render("auth/register.hbs");
 });
 
 // POST REQUEST FOR REGISTER
@@ -59,7 +59,7 @@ router.post("/register", (req, res, next) => {
 // GET REQUEST TO LOG IN
 router.get("/login", (req, res, next) => {
   // SHOW THE FORM TO LOG IN
-  res.render("../views/auth/login.hbs");
+  res.render("auth/login.hbs");
 });
 
 // POST REQUEST TO LOG IN
@@ -77,13 +77,13 @@ router.post("/login", (req, res, next) => {
           req.session.myProperty = userObj; // NEED EXPRESS-SESSION & MONGO-CONNECT
           res.redirect("/account"); // DOUBLE CHECK THAT ROUTE
         } else {
-          res.render("../views/auth/login.hbs", {
+          res.render("auth/login.hbs", {
             error: "Ooopsy Doopsy Password seems incorrect",
           });
           return;
         }
       } else {
-        res.render("../views/auth/login.hbs");
+        res.render("auth/login.hbs");
         return;
       }
     })
@@ -106,15 +106,8 @@ const isLoggedIn = (req, res, next) => {
 
 router.get("/account", isLoggedIn, (req, res, next) => {
   let theUsername = req.session.myProperty;
-  res.render("../views/auth/account.hbs", { username: theUsername.username });
+  res.render("auth/account.hbs", { username: theUsername.username });
 });
-
-
-
-
-
-
-
 
 // EXPORT THE ROUTES
 module.exports = router;

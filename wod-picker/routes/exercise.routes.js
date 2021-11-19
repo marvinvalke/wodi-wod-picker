@@ -18,7 +18,7 @@ router.get("/exercise", (req, res, next) => {
   // IF STATEMENT HERE
   Exercise.find()
     .then((allExercises) => {
-      res.render("../views/exercise/exercises-list.hbs", { allExercises });
+      res.render("exercise/exercises-list.hbs", { allExercises });
     })
     .catch((err) => {
       next(err);
@@ -29,7 +29,7 @@ router.get("/exercise/:id", (req, res, next) => {
   const { id } = req.params;
   Exercise.findById(id)
     .then((theExercise) => {
-      res.render("../views/exercise/exercise-detail.hbs", { theExercise });
+      res.render("exercise/exercise-detail.hbs", { theExercise });
     })
     .catch((err) => {
       next(err);

@@ -20,7 +20,7 @@ router.get(
   /* isLoggedIn, */ (req, res, next) => {
     Wod.find()
       .then((wods) => {
-        res.render("../views/wod/wod-list.hbs", { wods });
+        res.render("wod/wod-list.hbs", { wods });
       })
       .catch((err) => {
         next(err);
@@ -34,7 +34,7 @@ router.get(
   /* isLoggedIn, */ (req, res, next) => {
     Exercise.find()
       .then((allExercises) => {
-        res.render("../views/wod/wod-create.hbs", { allExercises });
+        res.render("wod/wod-create.hbs", { allExercises });
       })
       .catch((err) => {
         next(err);
@@ -54,7 +54,7 @@ router.post(
         res.redirect("/wod");
       })
       .catch((err) => {
-        res.render("../views/wod/wod-create.hbs");
+        res.render("wod/wod-create.hbs");
       });
   }
 );
@@ -69,7 +69,7 @@ router.get(
       .then((theWod) => {
         // GET TO THE DETAILLED WOD
         console.log("This is the wod", theWod);
-        res.render("../views/wod/wod-details.hbs", { theWod });
+        res.render("wod/wod-details.hbs", { theWod });
       })
       .catch((err) => {
         next(err);
@@ -86,7 +86,7 @@ router.get(
       .populate("exercises")
       .then((theWod) => {
         // GO TO THE WOD EDIT FORM
-        res.render("../views/wod/wod-edit.hbs", { theWod });
+        res.render("wod/wod-edit.hbs", { theWod });
       })
       .catch((err) => {
         next(err);
