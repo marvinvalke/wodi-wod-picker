@@ -1,0 +1,20 @@
+<h1>WOD {{theWod.name}} DETAILS</h1>
+
+<div>
+    <ul>
+        <li>Environement: {{theWod.environement}}</li>
+        <li>Intensity: {{theWod.intensity}}</li>
+        <li>Rounds: {{theWod.rounds}}</li>
+        <li>Timer: {{theWod.duration}}</li>
+    </ul>
+</div>
+<div>
+    <h6>Exercises: </h6>
+    <ul>
+        {{#each theWod.exercises}}
+        <li>
+            <a href="/exercise/{{this._id}}">{{this.name}}</a>
+        </li>
+        {{/each}}
+    </ul>
+</div>

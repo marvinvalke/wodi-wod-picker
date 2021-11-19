@@ -6,12 +6,18 @@ const WodSchema = new Schema({
   name: String,
   environement: String,
   exercises: {
-    type: Schema.Types.ObjectId,
+    type: [Schema.Types.ObjectId],
     ref: "exercise",
   },
   rounds: Number,
-  duration: Number,
-  intensity: Number,
+  duration: {
+    type: Number,
+    min: 0,
+  },
+  intensity: {
+    type: String,
+    enum:["Easy" , "Medium" , "Hard" , "Insane"],
+  },
 });
 
 const Wod = model("wod", WodSchema);
