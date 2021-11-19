@@ -9,6 +9,18 @@ const bcrypt = require("bcryptjs");
 
 //---------------------------------------ROUTES------------------------------------
 
+//Test route for user PROFILE
+
+router.get ("/profile", (req, res, next) =>{
+  //Show the user profile page
+  res.render("../views/auth/profile.hbs")
+});
+
+router.get("/welcome", (req, res, next) =>{
+  //Show the homepage for the signed in user
+  res.render("../views/auth/account.hbs")
+})
+
 //-----------------REGISTER-----------------
 // GET REQUEST FOR REGISTER
 router.get("/register", (req, res, next) => {
