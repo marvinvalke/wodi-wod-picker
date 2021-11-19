@@ -15,7 +15,7 @@ const isLoggedIn = (req, res, next) => {
 
 //-------------------------------PROTECTED ROUTES------------------------------------
 // USER CAN SEE ALL HIS WODS
-router.get("/wod", isLoggedIn, (req, res, next) => {
+router.get("/wod", /* isLoggedIn, */ (req, res, next) => {
   Wod.find()
     .then((wods) => {
       res.render("../views/auth/wod-list.hbs", { wods });
@@ -26,7 +26,7 @@ router.get("/wod", isLoggedIn, (req, res, next) => {
 });
 
 // USER CAN CREATE A WOD
-router.get("/wod/create-a-wod", isLoggedIn, (req, res, next) => {
+router.get("/wod/create-a-wod", /* isLoggedIn, */ (req, res, next) => {
   Exercise.find()
     .then((allExercises) => {
       res.render("../views/wod/wod-create.hbs", { allExercises });
@@ -37,7 +37,7 @@ router.get("/wod/create-a-wod", isLoggedIn, (req, res, next) => {
 });
 
 // CREATING A WOD IF SUCCESS GO BACK TO WOD LIST PAGE OTHERWISE REDIRECT TO CREATE A WOD PAGE
-router.post("/wod/create-a-wod", isLoggedIn, (req, res, next) => {
+router.post("/wod/create-a-wod", /* isLoggedIn, */ (req, res, next) => {
   const { name, environement, exercises, rounds, duration, intensity } =
     req.body;
   Wod.create({ name, environement, exercises, rounds, duration, intensity })
@@ -50,7 +50,7 @@ router.post("/wod/create-a-wod", isLoggedIn, (req, res, next) => {
 });
 
 // USER CAN CHECK ON A SPECIFIC WOD
-router.get("/wod/:id", isLoggedIn, (req, res, next) => {
+router.get("/wod/:id", /* isLoggedIn, */ (req, res, next) => {
   const { id } = req.params;
   Wod.findById(id)
     .populate("exercises")
@@ -64,7 +64,7 @@ router.get("/wod/:id", isLoggedIn, (req, res, next) => {
 });
 
 // USER CAN EDIT THI SPECIFIC WOD
-router.get("/wod/:id/edit", isLoggedIn, (req, res, next) => {
+router.get("/wod/:id/edit", /* isLoggedIn, */ (req, res, next) => {
   const { id } = req.params;
   Wod.findById(id)
     .populate("exercises")

@@ -25,7 +25,7 @@ const capitalized = (string) =>
 
 app.locals.title = `${projectName}`;
 
-// 👇 Start handling routes here
+//------------- 👇 Start handling routes here ---------------------------
 const index = require("./routes/index");
 app.use("/", index);
 
@@ -37,6 +37,9 @@ app.use("/", authRoutes);
 const wodRoutes = require("./routes/wod.routes");
 app.use("/", wodRoutes);
 
+// IMPORT EXERCISE ROUTES
+const exerciseRoutes = require("./routes/exercise.routes");
+app.use('/' , exerciseRoutes)
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
 

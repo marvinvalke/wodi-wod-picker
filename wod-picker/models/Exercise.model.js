@@ -3,16 +3,15 @@ const { Schema, model } = require("mongoose");
 
 const ExerciseSchema = new Schema ({
     name: String,
-    difficultyRate: Number,
-    numberOfRep: Number,
-    targetedMuscle: {
-        type: String,
-        enum:['Full-body','Arms' , 'Abs' , 'Back' , 'Legs'],
-        default: 'Full-body'
-    },
-    img: String,
-    link: String,
+    bodyPart: String,
+    target: String,
+    equipment: String,
+    gifUrl: String,
+    id: String,
+    
 });
+
+
 
 const Exercise = model("exercise" , ExerciseSchema);
 module.exports = Exercise;
