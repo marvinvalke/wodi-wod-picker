@@ -10,6 +10,12 @@ const errorHandling = require("../error-handling");
 //----------------------- ROUTES --------------------------------
 
 router.get("/exercise", (req, res, next) => {
+  //console.log(req.query)
+  //const { search } = req.query;
+  console.log("the research is for ", req.query);
+  const { search } = req.query;
+  console.log("You searched for ", search);
+  // IF STATEMENT HERE
   Exercise.find()
     .then((allExercises) => {
       res.render("../views/exercise/exercises-list.hbs", { allExercises });

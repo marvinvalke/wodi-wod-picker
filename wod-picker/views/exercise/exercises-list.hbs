@@ -1,4 +1,8 @@
 <h1>EXERCISE SEARCH ENGINE</h1>
+<form class="search" action="/exercise" method="GET">
+    <input class="search" type="text" placeholder="Search for exercises..." name="search">
+    <button>Search</button>
+</form>
 <div>
     {{#each allExercises}}
     <p> <a href="/exercise/{{this._id}}">{{this.name}}</a></p>
