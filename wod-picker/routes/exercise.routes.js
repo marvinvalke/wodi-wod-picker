@@ -12,17 +12,31 @@ const errorHandling = require("../error-handling");
 router.get("/exercise", (req, res, next) => {
   //console.log(req.query)
   //const { search } = req.query;
-  console.log("the research is for ", req.query);
+  //console.log("the research is for ", req.query);
   const { search } = req.query;
-  console.log("You searched for ", search);
+  //console.log("You searched for ", search);
   // IF STATEMENT HERE
-  Exercise.find()
-    .then((allExercises) => {
-      res.render("exercise/exercises-list.hbs", { allExercises });
-    })
-    .catch((err) => {
-      next(err);
-    });
+
+  //console.log('The search is >' , matchingExercises)
+  if (search) {
+    //console.log("MATCHES =>", search),
+      Exercise.find({ $text: { $search: search } })
+        .then((searchedExercises) => {
+          console.log('console logged this' , searchedExercises)
+          res.render("exercise/exercises-list.hbs", { searchedExercises });
+        })
+        .catch((err) => {
+          next(err);
+        });
+  } else {
+    Exercise.find()
+      .then((allExercises) => {
+        res.render("exercise/exercises-list.hbs", { allExercises });
+      })
+      .catch((err) => {
+        next(err);
+      });
+  }
 });
 
 router.get("/exercise/:id", (req, res, next) => {

@@ -30,7 +30,7 @@ router.get("/register", (req, res, next) => {
 
 // POST REQUEST FOR REGISTER
 router.post("/register", (req, res, next) => {
-  const { username, email, password, personalTrainer } = req.body;
+  const { username, email, password, /* personalTrainer  */} = req.body;
 
   // CHECK FOR PASSWORD CONFORMITY
   let passRegEx = /'^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$'/;
@@ -44,7 +44,7 @@ router.post("/register", (req, res, next) => {
   let salt = bcrypt.genSaltSync(10);
   let hash = bcrypt.hashSync(password, salt);
   // CREATE THE USER IN MONGODB
-  User.create({ username, email, password: hash, personalTrainer })
+  User.create({ username, email, password: hash, /* personalTrainer */ })
     .then(() => {
       // ONCE USER CREATED REDIRECT TO HOMEPAGE
       res.redirect("/");
@@ -70,11 +70,14 @@ router.post("/login", (req, res, next) => {
   User.find({ username })
     .then((usernameResponse) => {
       //IF USERNAME EXIST THEN CHECK IF THE PASSWORD IS MATCHING
+      
       if (usernameResponse.length) {
+        
         let userObj = usernameResponse[0];
         let match = bcrypt.compareSync(password, userObj.password);
         if (match) {
-          req.session.myProperty = userObj; // NEED EXPRESS-SESSION & MONGO-CONNECT
+          console.log('le IF dans le IF ')
+          //req.session.myProperty = userObj; // NEED EXPRESS-SESSION & MONGO-CONNECT
           res.redirect("/account"); // DOUBLE CHECK THAT ROUTE
         } else {
           res.render("auth/login.hbs", {

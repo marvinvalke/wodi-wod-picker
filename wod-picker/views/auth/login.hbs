@@ -1,7 +1,7 @@
 <!-- //this page loads when the user wants to login -->
 
 <div class="text-center">
-  <form class="form-signin">
+  <form class="form-signin" method="post" action="/login">
     <a href="/">
       <img class="mb-4" src="./images/woodpecker.png" alt="" width="72" height="72">
     </a>
@@ -10,7 +10,7 @@
 
     <div class="input-group has-validation">
       <span class="input-group-text"><img src="./images/arroba.png" alt="" width="30" height="30"></span>
-      <input type="email" id="inputEmail" class="form-control" placeholder="you@example.com" required="" autofocus="">
+      <input type="text" id="inputEmail" class="form-control" name="username" placeholder="you@example.com" required="" autofocus="">
     </div>
     <label for="inputEmail" class="sr-only"></label>
 
