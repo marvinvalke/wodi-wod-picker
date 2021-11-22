@@ -1,0 +1,27 @@
+<div class="wod-detail-page">
+    <h1>WOD {{theWod.name}} DETAILS</h1>
+    <div class="wod-detail-container">
+        <ul>
+            <li>Environement: {{theWod.environement}}</li>
+            <li>Intensity: {{theWod.intensity}}</li>
+            <li>Rounds: {{theWod.rounds}}</li>
+            <li>Timer: {{theWod.duration}}</li>
+        </ul>
+    </div>
+    <h5>Exercises: </h5>
+    <div class="wod-exercises-container">
+        {{#each theWod.exercises}}
+        <div class="exercise-title-img">
+            <a href="/exercise/{{this._id}}">{{this.name}}</a>
+            <a href="/exercise/{{this._id}}">
+                <img src="{{this.gifUrl}}" alt="">
+            </a>
+        </div>
+
+        {{/each}}
+    </div>
+    <button> GO !</button>
+    <form action="/wod/{{theWod._id}}/edit" method="GET">
+        <button type="submit" class="btn btn-warning">Edit</button>
+    </form>
+</div>

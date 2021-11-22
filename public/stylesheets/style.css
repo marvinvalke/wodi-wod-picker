@@ -1,0 +1,91 @@
+
+
+body {
+font-family: 'Lora', serif;
+padding: 10px;
+background-color: #242323;
+color: ghostwhite;
+font-family: 'Montserrat', sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  font-family: 'Montserrat', sans-serif;
+  text-decoration: none;
+  color: ghostwhite;
+}
+
+h1, h2, h3, h4, h5, h6 {
+font-family: 'Montserrat', sans-serif;
+font-weight: 400;
+text-transform: uppercase;
+}
+
+
+.centralise{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.wod-detail-container {
+  justify-content: flex-start;
+  display: flex;
+  align-content: center;
+}
+
+.wod-detail-container ul {
+  display: flex;
+ 
+}
+
+.wod-detail-container li {
+  font-size: 1.2em;
+  border: 1.5px solid rgb(141, 0, 0);
+  padding: 10px;
+  background-color: black;
+  border-radius: 20px;
+  margin: 20px;
+
+}
+
+.wod-exercises-container {
+display: flex;
+align-content: flex-start;
+justify-content: space-around;
+}
+
+.wod-exercises-container img {
+  width: 150px;
+  border-radius: 20px;
+}
+
+.exercise-title-img {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.exercice-detail {
+  display: flex;
+  align-items: center;
+}
+
+.exercice-detail img{
+  border-radius: 20px;
+}
+
+.exercice-detail li{
+  font-size: 1.2em;
+  border: 1.5px solid rgb(141, 0, 0);
+  padding: 10px;
+  background-color: black;
+  border-radius: 20px;
+  margin: 20px;
+}
+

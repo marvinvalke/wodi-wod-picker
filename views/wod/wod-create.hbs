@@ -1,0 +1,99 @@
+<h1>CREATE YOUR WOD</h1>
+<form method="POST" action="/wod/create">
+    <div>
+        <label class="form-label">1 - Choose a cool name:</label>
+        <input class="form-control" type="text" name="name">
+        <br>
+        <p>2 - Choose your environement:</p>
+        <input type="checkbox" id="outside" name="environement" value="Outside">
+        <label for="environement"> Outside</label>
+        <br>
+        <input type="checkbox" id="inside" name="environement" value="Inside">
+        <label for="environement">Inside</label>
+        <br>
+        <label class="form-label">3 - How many rounds:</label>
+        <select name="rounds" id="rounds">
+            <option>Rounds</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select>
+
+        <br>
+        <label class="form-label">4 - For how long:</label>
+        <select name="duration" id="duration">
+            <option>Min</option>
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+            <option value="25">25</option>
+            <option value="30">30</option>
+            <option value="35">35</option>
+            <option value="40">40</option>
+            <option value="45">45</option>
+            <option value="50">50</option>
+            <option value="45">55</option>
+            <option value="50">60</option>
+        </select>
+        <br>
+        <label for='intensity' class="form-label">5 - How hard:</label>
+        <select name="intensity">
+            <option>Level</option>
+            <option>Easy</option>
+            <option>Medium</option>
+            <option>Hard</option>
+            <option>Insane</option>
+        </select>
+        <br>
+        <p>Select your exercises:</p>
+        <label for="exercise"></label>
+        <select name="exercises">
+            <option value="">Select your first exercise</option>
+            {{#each allExercises}}
+            <option value="{{this._id}}">{{this.name}}</option>
+            {{/each}}
+        </select>
+        <br>
+        <label for="exercise"></label>
+        <select name="exercises">
+            <option value="">Select your second exercise</option>
+            {{#each allExercises}}
+            <option value="{{this._id}}">{{this.name}}</option>
+            {{/each}}
+        </select>
+        <br>
+        <label for="exercise"></label>
+        <select name="exercises">
+            <option value="">Let's add a third</option>
+            {{#each allExercises}}
+            <option value="{{this._id}}">{{this.name}}</option>
+            {{/each}}
+        </select>
+        <br>
+        <label for="exercise"></label>
+        <select name="exercises">
+            <option value="">Come on you can do better than 3</option>
+            {{#each allExercises}}
+            <option value="{{this._id}}">{{this.name}}</option>
+            {{/each}}
+        </select>
+        <br>
+        <label for="exercise"></label>
+        <select name="exercises">
+            <option value="">OK! One last one for the fun</option>
+            {{#each allExercises}}
+            <option value="{{this._id}}">{{this.name}}</option>
+            {{/each}}
+        </select>
+        <br>
+        <button class="btn btn-primary" type="submit">CREATE WOD</button>
+    </div>
+</form>
