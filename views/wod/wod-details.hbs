@@ -20,8 +20,10 @@
 
         {{/each}}
     </div>
-    <button> GO !</button>
     <form action="/wod/{{theWod._id}}/edit" method="GET">
-        <button type="submit" class="btn btn-warning">Edit</button>
+        <button type="submit" class="btn btn-primary">Edit</button>
+    </form>
+    <form method="POST" action="/wod/{{theWod._id}}/delete">
+        <button class="btn btn-primary" type="submit">DELETE WOD</button>
     </form>
 </div>

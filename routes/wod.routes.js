@@ -27,13 +27,14 @@ router.get(
       });
   }
 );
-
+let allTheExercises = null;
 // USER CAN CREATE A WOD
 router.get(
   "/wod/create",
   /* isLoggedIn, */ (req, res, next) => {
     Exercise.find()
       .then((allExercises) => {
+        allTheExercises = allExercises;
         res.render("wod/wod-create.hbs", { allExercises });
       })
       .catch((err) => {
@@ -48,7 +49,7 @@ router.post(
   /* isLoggedIn, */ (req, res, next) => {
     const { name, environement, exercises, rounds, duration, intensity } =
       req.body;
-    console.log(req.body);
+    //console.log(req.body);
     Wod.create({ name, environement, exercises, rounds, duration, intensity })
       .then(() => {
         res.redirect("/wod");
@@ -86,13 +87,36 @@ router.get(
   "/wod/:id/edit",
   /* isLoggedIn, */ (req, res, next) => {
     const { id } = req.params;
-    Exercise.find();
     Wod.findById(id)
       .populate("exercises")
       .then((theWod) => {
-        console.log("EXERCISE IN THE WOD =", theWod.exercises[1].name);
-        // GO TO THE WOD EDIT FORM
-        res.render("wod/wod-edit.hbs", { theWod });
+        let outsideChecked = theWod.environement == "Outside";
+        Exercise.find()
+          .then((allExercises) => {
+            //allTheExercises = allExercises;
+            let names = theWod.exercises.map((e) => {
+              return e.name;
+            });
+            //console.log("names is =" , names);
+            let cloned = JSON.parse(JSON.stringify(allExercises));
+            let newExercises = cloned.map((e) => {
+              if (names.includes(e.name)) {
+                e.selected = true;
+              }
+              return e;
+            });
+            /*  let filtered = newExercises.filter((e) => e.selected);
+            console.log(filtered); */
+            // GO TO THE WOD EDIT FORM
+            res.render("wod/wod-edit.hbs", {
+              theWod,
+              outsideChecked,
+              allExercises /* : newExercises */,
+            });
+          })
+          .catch((err) => {
+            next(err);
+          });
       })
       .catch((err) => {
         next(err);
@@ -122,8 +146,9 @@ router.post("/wod/:id/edit", (req, res, next) => {
 });
 
 // USER CAN DELETE THIS SPECIFIC WOD
-router.post("wod/:id/delete", (req, res, next) => {
+router.post("/wod/:id/delete", (req, res, next) => {
   const { id } = req.params;
+  
   Wod.findByIdAndDelete(id)
     .then(() => {
       res.redirect("/wod");
