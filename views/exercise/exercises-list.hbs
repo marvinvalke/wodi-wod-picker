@@ -3,7 +3,7 @@
     <input class="search" type="text" placeholder="Search for exercises..." name="search">
     <button>Search</button>
 </form>
-<div>
+<div class='searched-exercises'>
     {{#each searchedExercises}}
     <p> <a href="/exercise/{{this._id}}">{{this.name}}</a></p>
     <a href="/exercise/{{this._id}}">
@@ -11,7 +11,7 @@
     </a>
     {{/each}}
 </div>
-<div>
+<div class="exercises-list">
     {{#each allExercises}}
     <p> <a href="/exercise/{{this._id}}">{{this.name}}</a></p>
     <a href="/exercise/{{this._id}}">
