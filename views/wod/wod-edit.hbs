@@ -1,11 +1,11 @@
-<h1>EDIT YOUR WOD</h1>
+<h1>EDIT {{theWod.name}}</h1>
 <form method="POST" action="/wod/{{theWod.id}}/edit">
     <div>
         <label class="form-label">1 - Choose a cool name:</label>
         <input class="form-control" type="text" name="name" value="{{theWod.name}}">
         <br>
         <p>2 - Choose your environement:</p>
-        <input type="checkbox" id="outside" name="environement" value="Outside">
+        <input type="checkbox" id="outside" name="environement" value="{{theWod.environement}}">
         <label for="environement"> Outside</label>
         <br>
         <input type="checkbox" id="inside" name="environement" value="Inside">
@@ -52,43 +52,38 @@
             <option>Hard</option>
             <option>Insane</option>
         </select>
-        <p>Select your exercises:</p>
+        <p>Pick up exercises:</p>
         <label for="exercise"></label>
         <select name="exercises">
-            <option value="">Select your first exercise</option>
-            {{#each allExercises}}
+            {{#each theWod.exercises}}
             <option value="{{this._id}}">{{this.name}}</option>
             {{/each}}
         </select>
         <br>
         <label for="exercise"></label>
         <select name="exercises">
-            <option value="">Select your second exercise</option>
-            {{#each allExercises}}
+            {{#each theWod.exercises}}
             <option value="{{this._id}}">{{this.name}}</option>
             {{/each}}
         </select>
         <br>
         <label for="exercise"></label>
         <select name="exercises">
-            <option value="">Let's add a third</option>
-            {{#each allExercises}}
+            {{#each theWod.exercises}}
             <option value="{{this._id}}">{{this.name}}</option>
             {{/each}}
         </select>
         <br>
         <label for="exercise"></label>
         <select name="exercises">
-            <option value="">Come on you can do better than 3</option>
-            {{#each allExercises}}
+            {{#each theWod.exercises}}
             <option value="{{this._id}}">{{this.name}}</option>
             {{/each}}
         </select>
         <br>
         <label for="exercise"></label>
         <select name="exercises">
-            <option value="">OK! One last one for the fun</option>
-            {{#each allExercises}}
+            {{#each theWod.exercises}}
             <option value="{{this._id}}">{{this.name}}</option>
             {{/each}}
         </select>

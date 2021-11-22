@@ -86,10 +86,11 @@ router.get(
   "/wod/:id/edit",
   /* isLoggedIn, */ (req, res, next) => {
     const { id } = req.params;
+    Exercise.find();
     Wod.findById(id)
       .populate("exercises")
       .then((theWod) => {
-        console.log('EXERCISE IN THE WOD =', theWod.exercises)
+        console.log("EXERCISE IN THE WOD =", theWod.exercises[1].name);
         // GO TO THE WOD EDIT FORM
         res.render("wod/wod-edit.hbs", { theWod });
       })
