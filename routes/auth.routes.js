@@ -33,13 +33,13 @@ router.post("/register", (req, res, next) => {
   const { username, email, password, /* personalTrainer  */} = req.body;
 
   // CHECK FOR PASSWORD CONFORMITY
-  let passRegEx = /'^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$'/;
+ /*  let passRegEx = /'^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$'/;
   if (!passRegEx.test(password)) {
     res.render("auth/register.hbs", {
       error:
         "Please enter a minimum of eight characters, at least one letter and one number for your password",
     });
-  }
+  } */
   // ENCRYPT PASSWORDS
   let salt = bcrypt.genSaltSync(10);
   let hash = bcrypt.hashSync(password, salt);
@@ -48,6 +48,7 @@ router.post("/register", (req, res, next) => {
     .then(() => {
       // ONCE USER CREATED REDIRECT TO HOMEPAGE
       res.redirect("/");
+      console.log('User created')
     })
     .catch((err) => {
       // IF CREATION FAIL GO TO NEXT ERR HANDLING

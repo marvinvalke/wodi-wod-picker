@@ -1,5 +1,6 @@
 <div class="wod-detail-page">
     <h1>WOD {{theWod.name}} DETAILS</h1>
+
     <div class="wod-detail-container">
 
         <li>Environement: {{theWod.environement}}</li>
@@ -10,8 +11,8 @@
     </div>
     <hr>
     <h5>Exercises: </h5>
-    <hr>
     <div class="wod-exercises-container">
+        
         {{#each theWod.exercises}}
         <div class="exercise-title-img">
             <a href="/exercise/{{this._id}}">{{this.name}}</a>
@@ -19,9 +20,9 @@
                 <img src="{{this.gifUrl}}" alt="">
             </a>
         </div>
-
         {{/each}}
     </div>
+    <hr>
     <div class="edit-delete-btn">
         <form method="GET" action="/wod/{{theWod._id}}/edit">
             <button class="btn btn-primary" type="submit">EDIT WOD</button>
