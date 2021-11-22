@@ -1,14 +1,16 @@
 <div class="wod-detail-page">
     <h1>WOD {{theWod.name}} DETAILS</h1>
     <div class="wod-detail-container">
-        <ul>
-            <li>Environement: {{theWod.environement}}</li>
-            <li>Intensity: {{theWod.intensity}}</li>
-            <li>Rounds: {{theWod.rounds}}</li>
-            <li>Timer: {{theWod.duration}}</li>
-        </ul>
+
+        <li>Environement: {{theWod.environement}}</li>
+        <li>Intensity: {{theWod.intensity}}</li>
+        <li>Rounds: {{theWod.rounds}}</li>
+        <li>Timer: {{theWod.duration}}</li>
+
     </div>
+    <hr>
     <h5>Exercises: </h5>
+    <hr>
     <div class="wod-exercises-container">
         {{#each theWod.exercises}}
         <div class="exercise-title-img">
@@ -20,10 +22,12 @@
 
         {{/each}}
     </div>
-    <form action="/wod/{{theWod._id}}/edit" method="GET">
-        <button type="submit" class="btn btn-primary">Edit</button>
-    </form>
-    <form method="POST" action="/wod/{{theWod._id}}/delete">
-        <button class="btn btn-primary" type="submit">DELETE WOD</button>
-    </form>
+    <div class="edit-delete-btn">
+        <form method="GET" action="/wod/{{theWod._id}}/edit">
+            <button class="btn btn-primary" type="submit">EDIT WOD</button>
+        </form>
+        <form method="POST" action="/wod/{{theWod._id}}/delete">
+            <button class="btn btn-primary" type="submit">DELETE WOD</button>
+        </form>
+    </div>
 </div>

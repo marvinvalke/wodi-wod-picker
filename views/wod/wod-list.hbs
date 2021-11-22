@@ -1,6 +1,10 @@
 <h1>MY WODS</h1>
 <div class="wod-container">
+    <div class="pick-a-wod-container">
+        <h5>Pick a WoD</h5>
+    </div>
     {{#each wods}}
+    <hr>
     <p><a href="/wod/{{this._id}}">{{this.name}}</a></p>
     {{/each}}
 </div>
