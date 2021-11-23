@@ -1,18 +1,14 @@
 <div class="wod-detail-page">
     <h1>WOD {{theWod.name}} DETAILS</h1>
-
     <div class="wod-detail-container">
-
         <li>Environement: {{theWod.environement}}</li>
         <li>Intensity: {{theWod.intensity}}</li>
         <li>Rounds: {{theWod.rounds}}</li>
         <li>Timer: {{theWod.duration}}</li>
-
     </div>
     <hr>
     <h5>Exercises: </h5>
     <div class="wod-exercises-container">
-        
         {{#each theWod.exercises}}
         <div class="exercise-title-img">
             <a href="/exercise/{{this._id}}">{{this.name}}</a>

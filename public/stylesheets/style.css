@@ -1,12 +1,21 @@
+/* RED = rgb(141, 0, 0)
+GREY = rgb(36, 35, 35)
+WHITE = ghostwhite */
+/* index.hbs */
+.index-div{
+  height: 400px;
+}
 
-
+/* --------------------------------------------GLOBAL STYLES-------------------------------------------  */
 body {
 font-family: 'Lora', serif;
 padding: 10px;
-background-color: #242323;
+background-color: rgb(36, 35, 35);
+background-repeat: no-repeat;
+background-size: cover;
 color: ghostwhite;
 font-family: 'Montserrat', sans-serif;
-margin: 1px;
+margin: 0px;
 }
 
 li {
@@ -30,6 +39,13 @@ text-transform: uppercase;
 margin-bottom: 30px;
 }
 
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
 
 .centralise{
   display: flex;
@@ -38,16 +54,52 @@ margin-bottom: 30px;
 
 }
 
-.btn-primary {
+.btn-danger {
   background-color: rgb(141, 0, 0);
   border: none;
 }
 
-.btn-primary:hover {
+.btn-danger:hover {
   background-color: black;
   border: none;
   border: 1.5px solid rgb(141, 0, 0);
 }
+
+
+/* --------------------------------------------WOD LIST-------------------------------------------  */
+
+#wod-list-section {
+  height: 800px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.750),rgba(0, 0, 0, 0.750)) ,url(../images/crossfit-g06070b972_1920.jpg);
+  background-size:cover;
+  background-repeat: no-repeat;
+}
+
+.wod-container {
+  border: 1.5px solid rgb(141, 0, 0);
+  padding: 10px;
+  background-color: rgb(36, 35, 35, 0.870);
+  border-radius: 20px;
+  margin: 40px 20px;
+  align-items: center;
+  justify-content: center;
+}
+.wod-list a {
+  font-size: 1.3em;
+}
+
+.pick-a-wod-container {
+  text-align: center;
+}
+
+.create-wod-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+
+/* --------------------------------------------WOD DEATILS-------------------------------------------  */
 
 .wod-detail-container {
   display: flex;
@@ -59,7 +111,7 @@ margin-bottom: 30px;
 .wod-detail-container li {
   border: 1.5px solid rgb(141, 0, 0);
   padding: 10px;
-  background-color: black;
+  background-color: rgb(36, 35, 35);
   border-radius: 20px;
   margin: 10px;
 
@@ -77,10 +129,22 @@ flex-wrap: nowrap;
   border-radius: 20px;
 }
 
+/* --------------------------------------------WOD CREATE-------------------------------------------  */
+#wod-form-section {
+  height: 800px;
+  padding: 20px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.750),rgba(0, 0, 0, 0.750)) ,url(../images/man-g16145928b_1920.jpg);
+  background-size:cover;
+  background-repeat: no-repeat;
+}
 .create-a-wod-btn{
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 20px;
+}
+
+.create-a-wod-btn > button{
   margin: 20px;
 }
 
@@ -90,36 +154,37 @@ flex-wrap: nowrap;
   justify-content: center;
 }
 
-.exercise-title-img {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  
+.form-control-create {
+  width: 550px;
 }
 
-.exercice-detail {
-  display: flex;
-  align-items: center;
+.wod-form-container {
+  margin: 20px 0px;
 }
 
-.exercice-detail img{
-  border-radius: 20px;
-}
 
-.exercice-detail li{
-  font-size: 1.2em;
-  border: 1.5px solid rgb(141, 0, 0);
-  padding: 10px;
-  background-color: black;
-  border-radius: 20px;
+/* --------------------------------------------WOD EDIT-------------------------------------------  */
+
+.edit-delete-btn button{
+  width: 200px;
   margin: 20px;
+}
+
+.edit-delete-btn button:hover{
+  background-color: black;
+  border: 1.5px solid rgb(141, 0, 0);
+}
+
+/* --------------------------------------------EXERCISES LIST-------------------------------------------  */
+
+#exercises-list-section {
+  background-color: rgb(36, 35, 35);
 }
 
 .exercises-list img {
   width: 150px;
   border-radius: 20px;
   margin: 15px;
-
 }
 
 .exercises-list {
@@ -133,7 +198,6 @@ flex-wrap: nowrap;
   width: 250px;
   border-radius: 20px;
 }
-
 
  .search {
   position: relative;
@@ -169,6 +233,38 @@ flex-wrap: nowrap;
   margin: 0;
 }
 
+/* --------------------------------------------EXERCISE DETAILS-------------------------------------------  */
+
+#exercise-details-section {
+  background-image: url(../images/crossfit-g06070b972_1920.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.exercise-title-img {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.exercice-detail {
+  display: flex;
+  align-items: center;
+}
+
+.exercice-detail img{
+  border-radius: 20px;
+}
+
+.exercice-detail li{
+  font-size: 1.2em;
+  border: 1.5px solid rgb(141, 0, 0);
+  padding: 10px;
+  background-color: rgb(36, 35, 35);
+  border-radius: 20px;
+  margin: 20px;
+}
+
 .go-back {
   margin-top: 20px;
 }
@@ -176,43 +272,5 @@ flex-wrap: nowrap;
   color:rgb(141, 0, 0)
 }
 
-.wod-container {
-  font-size: 1.2em;
-  border: 1.5px solid rgb(141, 0, 0);
-  padding: 10px;
-  background-color: black;
-  border-radius: 20px;
-  margin: 40px 0px;
-}
-
-.pick-a-wod-container {
-  text-align: center;
-}
-
-
-.edit-delete-btn button{
-  width: 200px;
-  margin: 20px;
-}
-
-.edit-delete-btn button:hover{
-  background-color: black;
-  border: 1.5px solid rgb(141, 0, 0);
-}
-
-.form-control-create {
-  width: 550px;
-}
-
-.create-wod-btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 10px;
-}
-
-.wod-form-container {
-  margin: 20px 0px;
-}
 
 

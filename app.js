@@ -25,11 +25,29 @@ const capitalized = (string) =>
 
 app.locals.title = `${projectName}`;
 
-//------------- 👇 Start handling routes here ---------------------------
+//COOKIES
+const session = require("express-session");
+const MongoStore = require("connect-mongo");
+
+//keepping the logged-in state
+app.use(session({
+  secret: process.env.SESSION_SECRET,
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    maxAge: 1000 * 24 * 60 //cookie clearance interval
+  },
+  store: MongoStore.create({
+    mongoUrl: process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/wod-picker",
+    ttl: 24 * 60 * 60 //session clearance interval
+  })
+}));
+
+//-------------------- 👇 Start handling routes here ---------------------------
 const index = require("./routes/index");
 app.use("/", index);
 
-// IMPORT AUTHENTIFICATION ROUTES
+// IMPORT AUTHENTICATION ROUTES
 const authRoutes = require("./routes/auth.routes");
 app.use("/", authRoutes);
 

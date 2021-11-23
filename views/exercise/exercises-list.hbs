@@ -1,28 +1,30 @@
-<h1>EXERCISE SEARCH ENGINE</h1>
+<section id="exercises-list-section">
+    <h1>EXERCISE SEARCH ENGINE</h1>
 
-<div class="search">
-    <form class="search" action="/exercise" method="GET"><input type="text" class="form-control"
-            placeholder="Search for exercises..." name="search">
-        <button class="btn btn-primary">Search</button>
-    </form>
-</div>
+    <div class="search">
+        <form class="search" action="/exercise" method="GET"><input type="text" class="form-control"
+                placeholder="Search for exercises..." name="search">
+            <button class="btn btn-primary">Search</button>
+        </form>
+    </div>
 
 
-<div class='searched-exercises'>
-    {{#each searchedExercises}}
-    <p> <a href="/exercise/{{this._id}}">{{this.name}}</a></p>
-    <a href="/exercise/{{this._id}}">
-        <img src="{{this.gifUrl}}" alt="ExerciseGif">
-    </a>
-    {{/each}}
-</div>
-<div class="exercises-list">
-    {{#each allExercises}}
-    <div class="exercise-name-img">
-        <!-- <p> <a href="/exercise/{{this._id}}">{{this.name}}</a></p> -->
+    <div class='searched-exercises'>
+        {{#each searchedExercises}}
+        <p> <a href="/exercise/{{this._id}}">{{this.name}}</a></p>
         <a href="/exercise/{{this._id}}">
             <img src="{{this.gifUrl}}" alt="ExerciseGif">
         </a>
+        {{/each}}
     </div>
-    {{/each}}
-</div>
+    <div class="exercises-list">
+        {{#each allExercises}}
+        <div class="exercise-name-img">
+            <!-- <p> <a href="/exercise/{{this._id}}">{{this.name}}</a></p> -->
+            <a href="/exercise/{{this._id}}">
+                <img src="{{this.gifUrl}}" alt="ExerciseGif">
+            </a>
+        </div>
+        {{/each}}
+    </div>
+</section>
