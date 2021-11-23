@@ -51,12 +51,12 @@ h1 {
 
 }
 
-.btn-primary {
+.btn-danger {
   background-color: rgb(141, 0, 0);
   border: none;
 }
 
-.btn-primary:hover {
+.btn-danger:hover {
   background-color: black;
   border: none;
   border: 1px solid rgb(141, 0, 0);
