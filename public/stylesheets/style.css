@@ -1,6 +1,8 @@
-/* RED = rgb(141, 0, 0)
+/*
+RED = rgb(141, 0, 0)
 GREY = rgb(36, 35, 35)
-WHITE = ghostwhite */
+WHITE = ghostwhite 
+*/
 /* --------------------------------------------GLOBAL STYLES-------------------------------------------  */
 body {
 font-family: 'Lora', serif;
@@ -57,14 +59,14 @@ h1 {
 .btn-primary:hover {
   background-color: black;
   border: none;
-  border: 1.5px solid rgb(141, 0, 0);
+  border: 1px solid rgb(141, 0, 0);
 }
 
 
 /* --------------------------------------------WOD LIST-------------------------------------------  */
 
 #wod-list-section {
-  height: 800px;
+  height: 700px;
   background-image: linear-gradient(rgba(0, 0, 0, 0.750),rgba(0, 0, 0, 0.750)) ,url(../images/crossfit-g06070b972_1920.jpg);
   background-size:cover;
   background-repeat: no-repeat;
@@ -104,9 +106,9 @@ h1 {
 }
 
 .wod-detail-container li {
-  border: 1.5px solid rgb(141, 0, 0);
+  border: 1px solid rgb(141, 0, 0);
   padding: 10px;
-  background-color: rgb(36, 35, 35);
+  background-color: rgb(0, 0, 0);
   border-radius: 20px;
   margin: 10px;
 
@@ -124,9 +126,29 @@ flex-wrap: nowrap;
   border-radius: 20px;
 }
 
+.go-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.go-btn button {
+  border: 1px solid rgb(141, 0, 0);
+  padding: 10px;
+  background-color: rgb(0, 0, 0);
+  border-radius: 10px 0px 10px 0px;
+  margin: 10px;
+  width: 400px;
+}
+
+.go-btn button:hover {
+  background-color:rgb(141, 0, 0)
+}
+
+
 /* --------------------------------------------WOD CREATE-------------------------------------------  */
 #wod-form-section {
-  height: 800px;
+  height: 700px;
   padding: 20px;
   background-image: linear-gradient(rgba(0, 0, 0, 0.750),rgba(0, 0, 0, 0.750)) ,url(../images/man-g16145928b_1920.jpg);
   background-size:cover;
@@ -231,7 +253,8 @@ flex-wrap: nowrap;
 /* --------------------------------------------EXERCISE DETAILS-------------------------------------------  */
 
 #exercise-details-section {
-  background-image: url(../images/crossfit-g06070b972_1920.jpg);
+  height: 700px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.750),rgba(0, 0, 0, 0.750)), url(../images/crossfit-gf7c7be81d_1920.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }

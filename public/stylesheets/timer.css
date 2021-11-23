@@ -1,0 +1,115 @@
+/*
+RED = rgb(141, 0, 0)
+GREY = rgb(36, 35, 35)
+WHITE = ghostwhite 
+*/
+
+@font-face {
+  font-family: 'Digi';
+  src: url('fonts/ds-digib.ttf');
+}
+
+  
+  #clock {
+    box-sizing: border-box;
+    height: 250px;
+    margin: 0 auto;
+    padding: 18px 0;
+    width: 245px;
+  }
+  
+  #sphere {
+    box-sizing: border-box;
+    font-family: 'Digi';
+    font-size: 90px;
+    height: 250px;
+    padding: 50px 0;
+    position: relative;
+    text-align: center;
+    width: 300px;
+    display:flex;
+    align-items:flex-start;
+    justify-content:center;
+    margin-top: 50px;
+  }
+  
+  #splits-container {
+    font-size: 20px;
+    font-weight: 100;
+    position: absolute;
+    left: 50px;
+  }
+  
+  #splits-container li {
+    padding-bottom: 5px;
+    text-align: right;
+  }
+  
+  #milliseconds {
+    font-size: 36px;
+    position: absolute;
+    top: 20px;
+  }
+
+  
+  .number {
+    width:60px;
+  }
+  
+  .timer-btn {
+    border: 0;
+    border: 1px solid rgb(141, 0, 0);
+    background-color: rgb(0, 0, 0);
+    border-radius: 20px;
+    margin: 0px;
+    bottom: 1px;
+    color: ghostwhite;
+    cursor: pointer;
+    height: 50px;
+    outline: 0;
+    position: absolute;
+    width: 120px;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .timer-btn:hover {
+    color:rgb(141, 0, 0);
+  }
+  .timer-btn.start,
+  .timer-btn.stop {
+    left: 10px;
+  }
+  
+  .timer-btn.reset,
+  .timer-btn.split {
+    right: 10px;
+  }
+  
+  .timer-btn.start {
+    background: black;
+  }
+  .timer-btn.stop {
+    background: rgb(141, 0, 0);
+  }
+
+  .timer-btn.stop:hover {
+    color: rgb(141, 0, 0);
+    background: ghostwhite;
+    border: rgb(141, 0, 0);
+  }
+  
+
+  .timer-btn.reset {
+    background: rgb(36, 35, 35);
+  }
+  .timer-btn.split {
+    background: #162f53;
+    border: #162f53;
+  }
+
+  .timer-btn.split:hover {
+    color: #162f53;
+    background: ghostwhite;
+    border: #162f53;
+  } 

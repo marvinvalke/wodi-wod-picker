@@ -1,9 +1,15 @@
-<link rel="stylesheet" href="/public/stylesheets/timer.style.css">
-
+<h1>{{theWod.name}} : <i>{{theWod.duration}} min</i></h1>
+<div class="wod-detail-container">
+    {{#each theWod.exercises}}
+    <a href="/exercise/{{this._id}}">
+        <li>{{this.name}}</li>
+    </a>
+    {{/each}}
+</div>
+<hr>
 <section id="splits-container">
     <h3>Splits</h3>
     <ol id="splits"></ol>
-
 </section>
 
 <section id="clock">
@@ -17,12 +23,12 @@
             <span id="milDec">0</span>
             <span id="milUni">0</span>
         </div>
-        <button id="btnLeft" class="btn start">START</button>
-        <button id="btnRight" class="btn reset">RESET</button>
+        <button id="btnLeft" class="timer-btn start">START</button>
+        <button id="btnRight" class="timer-btn reset">RESET</button>
     </div>
 </section>
 
 
 
-<script src="/public/js/timer.js"></script>
-<script src="/public/js/chronometer.js"></script>
+<script src="/js/chronometer.js"></script>
+<script src="/js/timer.js"></script>

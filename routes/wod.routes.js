@@ -77,10 +77,7 @@ router.get(
   }
 );
 
-// USER CAN START WORKING OUT => TIMER
-router.get("/wod/:id/timer", (req, res, next) => {
-  res.render("wod/timer.hbs");
-});
+
 
 // USER CAN EDIT THI SPECIFIC WOD
 router.get(
@@ -157,6 +154,19 @@ router.post("/wod/:id/delete", (req, res, next) => {
       next(err);
     });
 });
+
+// USER CAN START TO WORKOUT
+router.get("/wod/:id/timer", (req,res,next)=>{
+  const {id} = req.params
+  Wod.findById(id)
+  .populate("exercises")
+  .then((theWod) => {
+    res.render("wod/timer.hbs" , {theWod})
+    
+  }).catch((err) => {
+    next (err)
+  });
+})
 
 // EXPORT THE ROUTES
 module.exports = router;
