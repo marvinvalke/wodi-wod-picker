@@ -13,6 +13,26 @@ background-size: cover;
 color: ghostwhite;
 font-family: 'Montserrat', sans-serif;
 margin: 0px;
+padding: 0px;
+}
+
+.navbar {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0rem;
+  padding-bottom: 0rem;
+}
+
+footer {
+  padding: 10px;
+}
+
+.my-4 {
+  margin-top: 0rem!important; 
+  margin-bottom: 0rem!important; 
 }
 
 li {
@@ -63,10 +83,55 @@ h1 {
 }
 
 
+
+/* --------------------------------------------LANDING PAGE-------------------------------------------  */
+
+.landing-page {
+  height: 620px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.750),rgba(0, 0, 0, 0.750)) ,url(../images/kettlebell.jpg);
+  background-size:contain;
+  background-repeat: no-repeat;
+}
+
+.text-center {
+  text-align: center!important;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.text-center button {
+  width: 300px;
+  justify-self: center;
+}
+
+/* --------------------------------------------LOGIN PAGE-------------------------------------------  */
+.login-page {
+  height: 620px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.750),rgba(0, 0, 0, 0.750)) ,url(../images/womanDumbell.jpg);
+  background-size:cover;
+  background-repeat: no-repeat;
+}
+
+
+/* -----------------------------------------REGISTER PAGE-------------------------------------------  */
+
+
+.register-page {
+  height: 620px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.750),rgba(0, 0, 0, 0.750)) ,url(../images/manSnatch.jpg);
+  background-size:cover;
+  background-repeat: no-repeat;
+}
+
+
+
 /* --------------------------------------------WOD LIST-------------------------------------------  */
 
 #wod-list-section {
-  height: 700px;
+  height: 750px;
   background-image: linear-gradient(rgba(0, 0, 0, 0.750),rgba(0, 0, 0, 0.750)) ,url(../images/crossfit-g06070b972_1920.jpg);
   background-size:cover;
   background-repeat: no-repeat;
@@ -260,6 +325,16 @@ flex-wrap: nowrap;
   width: 110px;
 }
 
+.search-btn {
+background-color: rgb(141, 0, 0);
+border: none;
+}
+
+.search-btn:hover {
+  background-color: black;
+  border: none;
+  }
+
 .exercises-list-container {
   margin: 0;
 }
@@ -267,7 +342,7 @@ flex-wrap: nowrap;
 /* --------------------------------------------EXERCISE DETAILS-------------------------------------------  */
 
 #exercise-details-section {
-  height: 700px;
+  height: 620px;
   background-image: linear-gradient(rgba(0, 0, 0, 0.750),rgba(0, 0, 0, 0.750)), url(../images/crossfit-gf7c7be81d_1920.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -286,6 +361,7 @@ flex-wrap: nowrap;
 
 .exercice-detail img{
   border-radius: 20px;
+  margin: 10px
 }
 
 .exercice-detail li{
@@ -302,6 +378,7 @@ flex-wrap: nowrap;
 
 .go-back {
   margin-top: 20px;
+  margin-left: 10px;
 }
 .go-back a:hover {
   color:rgb(141, 0, 0)
