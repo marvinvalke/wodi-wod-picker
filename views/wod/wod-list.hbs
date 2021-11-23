@@ -1,15 +1,20 @@
-<h1>MY WODS</h1>
-<div class="wod-container">
-    <div class="pick-a-wod-container">
-        <h5>Pick a WoD</h5>
+<section id="wod-list-section">
+    <h1>MY WODS</h1>
+    <div class="wod-container">
+        <div class="wod-list">
+            <div class="pick-a-wod-container">
+                <h4>Pick a WoD</h4>
+            </div>
+            {{#each wods}}
+            <hr>
+            <p><a href="/wod/{{this._id}}">{{this.name}} :</a> <i>{{this.environement}} </i>| <i>{{this.duration}}
+                    min</i> | <i>{{this.intensity}}</i></p>
+            {{/each}}
+        </div>
     </div>
-    {{#each wods}}
-    <hr>
-    <p><a href="/wod/{{this._id}}">{{this.name}}</a></p>
-    {{/each}}
-</div>
-<div class="create-a-wod-btn">
-    <form method="GET" action="/wod/create">
-        <button class="btn btn-primary" type="submit">CREATE A WOD</button>
-    </form>
-</div>
+    <div class="create-a-wod-btn">
+        <form method="GET" action="/wod/create">
+            <button class="btn btn-primary" type="submit">CREATE A WOD</button>
+        </form>
+    </div>
+</section>
