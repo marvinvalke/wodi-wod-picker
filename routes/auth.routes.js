@@ -52,7 +52,9 @@ router.post("/register", (req, res, next) => {
     })
     .catch((err) => {
       // IF CREATION FAIL GO TO NEXT ERR HANDLING
+      console.log(err);
       next(err);
+
     });
 });
 
