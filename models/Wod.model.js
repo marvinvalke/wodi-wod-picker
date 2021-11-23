@@ -9,6 +9,14 @@ const WodSchema = new Schema({
     type: [Schema.Types.ObjectId],
     ref: "exercise",
   },
+  ex1reps: Number,
+  ex2reps: Number,
+  ex3reps: {
+    type: Number, 
+    default: 0
+  },
+  ex4reps: Number,
+  ex5reps: Number,
   rounds: Number,
   duration: {
     type: Number,
@@ -16,7 +24,7 @@ const WodSchema = new Schema({
   },
   intensity: {
     type: String,
-    enum:["Easy" , "Medium" , "Hard" , "Insane"],
+    enum: ["Easy", "Medium", "Hard", "Insane"],
   },
 });
 

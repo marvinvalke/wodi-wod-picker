@@ -47,10 +47,33 @@ router.get(
 router.post(
   "/wod/create",
   /* isLoggedIn, */ (req, res, next) => {
-    const { name, environement, exercises, rounds, duration, intensity } =
-      req.body;
-    //console.log(req.body);
-    Wod.create({ name, environement, exercises, rounds, duration, intensity })
+    const {
+      name,
+      environement,
+      exercises,
+      ex1reps,
+      ex2reps,
+      ex3reps,
+      ex4reps,
+      ex5reps,
+      rounds,
+      duration,
+      intensity,
+    } = req.body;
+    console.log("LOOK AT MY REQ BODY" , req.body);
+    Wod.create({
+      name,
+      environement,
+      exercises,
+      ex1reps,
+      ex2reps,
+      ex3reps,
+      ex4reps,
+      ex5reps,
+      rounds,
+      duration,
+      intensity,
+    })
       .then(() => {
         res.redirect("/wod");
       })
@@ -69,15 +92,16 @@ router.get(
       .populate("exercises")
       .then((theWod) => {
         // GET TO THE DETAILLED WOD
-        res.render("wod/wod-details.hbs", { theWod });
+        console.log(theWod);
+        let reps = [theWod.ex1reps, theWod.ex2reps, theWod.ex3reps, theWod.ex4reps, theWod.ex5reps]
+
+        res.render("wod/wod-details.hbs", { theWod, reps });
       })
       .catch((err) => {
         next(err);
       });
   }
 );
-
-
 
 // USER CAN EDIT THI SPECIFIC WOD
 router.get(
@@ -145,7 +169,7 @@ router.post("/wod/:id/edit", (req, res, next) => {
 // USER CAN DELETE THIS SPECIFIC WOD
 router.post("/wod/:id/delete", (req, res, next) => {
   const { id } = req.params;
-  
+
   Wod.findByIdAndDelete(id)
     .then(() => {
       res.redirect("/wod");
@@ -156,17 +180,17 @@ router.post("/wod/:id/delete", (req, res, next) => {
 });
 
 // USER CAN START TO WORKOUT
-router.get("/wod/:id/timer", (req,res,next)=>{
-  const {id} = req.params
+router.get("/wod/:id/timer", (req, res, next) => {
+  const { id } = req.params;
   Wod.findById(id)
-  .populate("exercises")
-  .then((theWod) => {
-    res.render("wod/timer.hbs" , {theWod})
-    
-  }).catch((err) => {
-    next (err)
-  });
-})
+    .populate("exercises")
+    .then((theWod) => {
+      res.render("wod/timer.hbs", { theWod });
+    })
+    .catch((err) => {
+      next(err);
+    });
+});
 
 // EXPORT THE ROUTES
 module.exports = router;
