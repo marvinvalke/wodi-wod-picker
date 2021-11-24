@@ -16,6 +16,10 @@ margin: 0px;
 padding: 0px;
 }
 
+button {
+  border-radius: 10px 0px 10px 0px;
+}
+
 .navbar {
   position: relative;
   display: flex;
@@ -88,8 +92,8 @@ h1 {
 
 .landing-page {
   height: 620px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.750),rgba(0, 0, 0, 0.750)) ,url(../images/kettlebell.jpg);
-  background-size:contain;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.750),rgba(0, 0, 0, 0.750)) ,url(../images/man-g16145928b_1920.jpg);
+  background-size:cover;
   background-repeat: no-repeat;
 }
 
@@ -131,7 +135,7 @@ h1 {
 /* --------------------------------------------WOD LIST-------------------------------------------  */
 
 #wod-list-section {
-  height: 750px;
+  height: 620px;
   background-image: linear-gradient(rgba(0, 0, 0, 0.750),rgba(0, 0, 0, 0.750)) ,url(../images/crossfit-g06070b972_1920.jpg);
   background-size:cover;
   background-repeat: no-repeat;
@@ -159,6 +163,23 @@ h1 {
   justify-content: center;
   align-items: center;
   margin: 30px;
+}
+
+.create-btn {
+  background-color: rgb(141, 0, 0);
+  color: ghostwhite;
+  border: none;
+  border-radius: 10px 0px 10px 0px;
+  margin: 10px;
+  padding: 10px;
+}
+
+.create-btn:hover {
+  border: 1px solid rgb(141, 0, 0);
+  padding: 10px;
+  background-color: rgb(0, 0, 0);
+  border-radius: 10px 0px 10px 0px;
+  margin: 10px;
 }
 
 /* --------------------------------------------WOD DEATILS-------------------------------------------  */
@@ -220,6 +241,7 @@ flex-wrap: nowrap;
   background-size:cover;
   background-repeat: no-repeat;
 }
+
 .create-a-wod-btn{
   display: flex;
   align-items: center;
@@ -326,8 +348,9 @@ flex-wrap: nowrap;
 }
 
 .search-btn {
-background-color: rgb(141, 0, 0);
-border: none;
+  background-color: rgb(141, 0, 0);
+  border: none;
+  color: ghostwhite
 }
 
 .search-btn:hover {
