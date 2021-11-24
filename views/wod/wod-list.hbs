@@ -2,12 +2,8 @@
     <h1>MY WODS</h1>
     <div class="wod-container">
         <div class="wod-list">
-            <div class="pick-a-wod-container">
-                <h4>Pick a WoD</h4>
-            </div>
             {{#each wods}}
-            <hr>
-            <p><a href="/wod/{{this._id}}">{{this.name}} :</a> <i>{{this.environement}} </i>| <i>{{this.duration}}
+            <p><a class="wod-link" href="/wod/{{this._id}}">{{this.name}} :</a> <i>{{this.environement}} </i>| <i>{{this.duration}}
                     min</i> | <i>{{this.intensity}}</i></p>
             {{/each}}
         </div>

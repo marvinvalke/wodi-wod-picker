@@ -67,12 +67,32 @@
             <option value="{{this._id}}">{{this.name}}</option>
             {{/each}}
         </select>
+        <span>-</span>
+        <select name="ex1reps" id="duration">
+            <option>Reps</option>
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+            <option value="25">25</option>
+            <option value="30">30</option>
+        </select>
         <br>
         <select name="exercises">
             <option value="">Select your second exercise</option>
             {{#each allExercises}}
             <option value="{{this._id}}">{{this.name}}</option>
             {{/each}}
+        </select>
+        <span>-</span>
+        <select name="ex2reps" id="duration">
+            <option>Reps</option>
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+            <option value="25">25</option>
+            <option value="30">30</option>
         </select>
         <br>
         <select name="exercises">
@@ -81,12 +101,32 @@
             <option value="{{this._id}}">{{this.name}}</option>
             {{/each}}
         </select>
+        <span>-</span>
+        <select name="ex3reps" id="duration">
+            <option>Reps</option>
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+            <option value="25">25</option>
+            <option value="30">30</option>
+        </select>
         <br>
         <select name="exercises">
             <option value="">Come on you can do better than 3</option>
             {{#each allExercises}}
             <option value="{{this._id}}">{{this.name}}</option>
             {{/each}}
+        </select>
+        <span>-</span>
+        <select name="ex4reps" id="duration">
+            <option>Reps</option>
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+            <option value="25">25</option>
+            <option value="30">30</option>
         </select>
         <br>
         <select name="exercises">
@@ -95,8 +135,18 @@
             <option value="{{this._id}}">{{this.name}}</option>
             {{/each}}
         </select>
+        <span>-</span>
+        <select name="ex5reps" id="duration">
+            <option>Reps</option>
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+            <option value="25">25</option>
+            <option value="30">30</option>
+        </select>
         <div class="create-wod-btn">
-            <button class="create-btn btn-primary" type="submit">CREATE WOD</button>
+            <button class="create-btn" type="submit">CREATE WOD</button>
         </div>
     </form>
 </section>

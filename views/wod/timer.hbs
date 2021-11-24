@@ -1,34 +1,34 @@
-<h1>{{theWod.name}} : <i>{{theWod.duration}} min</i></h1>
-<div class="wod-detail-container">
-    {{#each theWod.exercises}}
-    <a href="/exercise/{{this._id}}">
-        <li>{{this.name}}</li>
-    </a>
-    {{/each}}
-</div>
-<hr>
-<section id="splits-container">
-    <h3>Splits</h3>
-    <ol id="splits"></ol>
-</section>
+<section class="timer-section">
+    <h1>{{theWod.name}} : <i>{{theWod.duration}} min</i></h1>
+    <div class="wod-detail-container timer-exercises">
+        {{#each theWod.exercises}}
+        <a href="/exercise/{{this._id}}">
+            <li>{{this.name}}</li>
+        </a>
 
-<section id="clock">
-    <div id="sphere">
-        <span id="minDec" class="number">0</span>
-        <span id="minUni" class="number">0</span>
-        <span>:</span>
-        <span id="secDec" class="number">0</span>
-        <span id="secUni" class="number">0</span>
-        <div id="milliseconds">
-            <span id="milDec">0</span>
-            <span id="milUni">0</span>
-        </div>
-        <button id="btnLeft" class="timer-btn start">START</button>
-        <button id="btnRight" class="timer-btn reset">RESET</button>
+        {{/each}}
     </div>
+    <hr>
+    <section id="splits-container">
+        <h3>exercises</h3>
+        <ol id="splits"></ol>
+    </section>
+
+    <section id="clock">
+        <div id="sphere">
+            <span id="minDec" class="number">0</span>
+            <span id="minUni" class="number">0</span>
+            <span>:</span>
+            <span id="secDec" class="number">0</span>
+            <span id="secUni" class="number">0</span>
+            <div id="milliseconds">
+                <span id="milDec">0</span>
+                <span id="milUni">0</span>
+            </div>
+            <button id="btnLeft" class="timer-btn start">START</button>
+            <button id="btnRight" class="timer-btn reset">RESET</button>
+        </div>
+    </section>
+    <script src="/js/chronometer.js"></script>
+    <script src="/js/timer.js"></script>
 </section>
-
-
-
-<script src="/js/chronometer.js"></script>
-<script src="/js/timer.js"></script>

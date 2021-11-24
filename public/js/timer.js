@@ -14,7 +14,6 @@ const milUniElement = document.getElementById("milUni");
 const splitsElement = document.getElementById("splits");
 
 function printTime() {
-  // ... your code goes here
   printSeconds();
   printMinutes();
 }
@@ -27,7 +26,6 @@ function printMinutes() {
 // ... your code goes here
 
 function printSeconds() {
-  // ... your code goes here
   let secs = chronometer.computeTwoDigitNumber(chronometer.getSeconds());
   secDecElement.innerText = secs[0];
   secUniElement.innerText = secs[1];
@@ -35,43 +33,23 @@ function printSeconds() {
 
 // ==> BONUS
 function printMilliseconds() {
-  // ... your code goes here
   let milPrint = chronometer.computeTwoDigitNumber(chronometer.currentMil);
   milDecElement.innerText = milPrint[0];
   milUniElement.innerText = milPrint[1];
 }
 
 function printSplit() {
-  // ... your code goes here
   let myLi = document.createElement("li");
-
   myLi.innerHTML = chronometer.split();
-
   splitsElement.appendChild(myLi);
-  console.log(myLi);
-  console.log(splitsElement);
 }
 
 function clearSplits() {
-  // ... your code goes here
   let mySplit = document.querySelector("ol");
   mySplit.innerHTML = "";
 }
 
-function setStopBtn() {
-  // ... your code goes here
-}
-
-function setSplitBtn() {
-  // ... your code goes here
-}
-
-function setStartBtn() {
-  // ... your code goes here
-}
-
 function setResetBtn() {
-  // ... your code goes here
   minDecElement.innerText = "0";
   minUniElement.innerText = "0";
   secDecElement.innerText = "0";
@@ -82,8 +60,6 @@ function setResetBtn() {
 
 // Start/Stop Button
 btnLeftElement.addEventListener("click", () => {
-  // ... your code goes here
-
   if (btnLeftElement.innerText === "START") {
     chronometer.start(printTime, printMilliseconds);
     btnLeftElement.innerText = "STOP";
@@ -101,8 +77,6 @@ btnLeftElement.addEventListener("click", () => {
 
 // Reset/Split Button
 btnRightElement.addEventListener("click", () => {
-  // ... your code goes here
-
   if (btnLeftElement.innerText === "START") {
     setResetBtn();
     clearSplits();
