@@ -1,44 +1,80 @@
 <!-- //if you click on register, this page will load and allow the user to access the platform -->
-<section class="register-page">
-  <div class="text-center">
-    <form class="form-signin" method="POST" action="/register">
-      <a href="/">
-        <img class="mb-4" src="./images/woodpecker.png" alt="" width="72" height="72">
+ {{!-- initial navbar (not logged in) --}}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">
+        Wod[i]
+        <!--  <img src="" width="30" height="30" class="d-inline-block align-top" alt=""> -->
+        Wodpicker
       </a>
-      <h1 class="h3 mb-3 font-weight-normal">Your journey starts here:</h1>
-  
-       <div class="input-group has-validation">
-        <span class="input-group-text"><img src="./images/id-card.png" alt="" width="30" height="30"></span>
-        <input type="name" id="inputName" class="form-control" name="name" placeholder="Name" required="" autofocus="">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        </ul>
+        <span class="navbar-text">
+          <a href="/login">Login</a> | <a href="/register">Register</a>
+        </span>
       </div>
-      <label for="" class="sr-only"></label>
-  
-      <div class="input-group has-validation">
-        <span class="input-group-text"><img src="./images/arroba.png" alt="" width="30" height="30"></span>
-        <input type="email" id="inputEmail" class="form-control" name="email" placeholder="you@example.com" required="" autofocus="">
-      </div>
-      <label for="inputEmail" class="sr-only"></label>
-  
-      <div class="input-group has-validation">
-        <span class="input-group-text"><img src="./images/password.png" alt="" width="30" height="30"></span>
-        <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Password" required="">
-      </div>
-      <label for="inputPassword" class="sr-only"></label>
-  
-      <div class="input-group has-validation">
-        <span class="input-group-text"><img src="./images/password.png" alt="" width="30" height="30"></span>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Confirm your password" required="">
-      </div>
-      <label for="inputPassword" class="sr-only"></label>
-  
-  
-      <div class="checkbox mb-3">
-        <label>
-          Are you a Personal Trainer?
-          <input type="checkbox" value="PT">
-        </label>
-      </div>
-      <button class="btn btn-lg btn-danger btn-block" type="submit">Register</button>
-    </form>
-  </div>
-</section>
+    </div>
+</nav>
+
+<div class="text-center">
+  <form class="form-signin" method="POST" action="/register">
+    <a href="/">
+      <img class="mb-4" src="./images/woodpecker.png" alt="" width="72" height="72">
+    </a>
+    <h1 class="h3 mb-3 font-weight-normal">Your journey starts here:</h1>
+
+     <div class="input-group has-validation">
+      <span class="input-group-text"><img src="./images/id-card.png" alt="" width="30" height="30"></span>
+      <input type="name" id="inputName" class="form-control" name="name" placeholder="Name" required="" autofocus="">
+    </div>
+    <label for="" class="sr-only"></label>
+
+    <div class="input-group has-validation">
+      <span class="input-group-text"><img src="./images/arroba.png" alt="" width="30" height="30"></span>
+      <input type="email" id="inputEmail" class="form-control" name="email" placeholder="you@example.com" required="" autofocus="">
+    </div>
+    <label for="inputEmail" class="sr-only"></label>
+
+    <div class="input-group has-validation">
+      <span class="input-group-text"><img src="./images/password.png" alt="" width="30" height="30"></span>
+      <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Password" required="">
+    </div>
+    <label for="inputPassword" class="sr-only"></label>
+
+    <div class="input-group has-validation">
+      <span class="input-group-text"><img src="./images/password.png" alt="" width="30" height="30"></span>
+      <input type="password" id="inputPassword" class="form-control" placeholder="Confirm your password" required="">
+    </div>
+    <label for="inputPassword" class="sr-only"></label>
+
+
+    <div class="checkbox mb-3">
+      <label>
+        Are you a Personal Trainer?
+        <input type="checkbox" value="PT">
+      </label>
+    </div>
+    <button class="btn btn-lg btn-danger btn-block" type="submit">Register</button>
+  </form>
+</div>
+
+<!-- //the footer is the same in every single page -->
+<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+  <p class="col-md-4 mb-0 text-muted">Marvin & Hugo © 2021</p>
+
+  <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+    <img class="bi me-2" width="30" height="30" src="./images/woodpecker.png">
+  </a>
+
+  <ul class="nav col-md-4 justify-content-end">
+    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Buszinga</a></li>
+    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Chasing Manish</a></li>
+    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
+    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+  </ul>
+</footer>
