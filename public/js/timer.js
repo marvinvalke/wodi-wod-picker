@@ -23,7 +23,6 @@ function printMinutes() {
   minDecElement.innerText = mins[0];
   minUniElement.innerText = mins[1];
 }
-// ... your code goes here
 
 function printSeconds() {
   let secs = chronometer.computeTwoDigitNumber(chronometer.getSeconds());
@@ -31,7 +30,6 @@ function printSeconds() {
   secUniElement.innerText = secs[1];
 }
 
-// ==> BONUS
 function printMilliseconds() {
   let milPrint = chronometer.computeTwoDigitNumber(chronometer.currentMil);
   milDecElement.innerText = milPrint[0];

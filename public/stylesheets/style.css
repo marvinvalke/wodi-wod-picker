@@ -28,8 +28,8 @@ WHITE = ghostwhite */
 }
 
 #welcome-bg {
-  height: 500px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.750),rgba(0, 0, 0, 0.750)) ,url(../images/bg.jpeg);
+  height: 650px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.750),rgba(0, 0, 0, 0.750)) ,url(/images/bg.jpeg);
   background-size:cover;
   background-repeat: no-repeat;
 }
@@ -86,6 +86,7 @@ font-family: 'Montserrat', sans-serif;
 font-weight: 400;
 text-transform: uppercase;
 margin-bottom: 30px;
+margin-left: 10px;
 }
 
 h1 {
@@ -97,13 +98,14 @@ h1 {
 
 .btn-danger {
   background-color: rgb(141, 0, 0);
-  border: none;
+  border: 1px solid rgb(141, 0, 0);
+  padding: 12px;
 }
 
 .btn-danger:hover {
   background-color: black;
   border: none;
-  border: 1.5px solid rgb(141, 0, 0);
+  border: 1px solid rgb(141, 0, 0);
 }
 
 
@@ -112,7 +114,7 @@ h1 {
 
 .landing-page {
   height: 650px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.750),rgba(0, 0, 0, 0.750)) ,url(../images/man-g16145928b_1920.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.750),rgba(0, 0, 0, 0.750)) ,url(/images/manRope.jpg);
   background-size:cover;
   background-repeat: no-repeat;
 }
@@ -134,7 +136,7 @@ h1 {
 /* --------------------------------------------LOGIN PAGE-------------------------------------------  */
 .login-page {
   height: 650px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.750),rgba(0, 0, 0, 0.750)) ,url(../images/womanDumbell.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.750),rgba(0, 0, 0, 0.750)) ,url(/images/womanDumbbell.jpg);
   background-size:cover;
   background-repeat: no-repeat;
 }
@@ -145,7 +147,7 @@ h1 {
 
 .register-page {
   height: 650px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.750),rgba(0, 0, 0, 0.750)) ,url(../images/manSnatch.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.750),rgba(0, 0, 0, 0.750)) ,url(/images/manSnatch.jpg);
   background-size:cover;
   background-repeat: no-repeat;
 }
@@ -156,9 +158,14 @@ h1 {
 
 #wod-list-section {
   height: 650px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.750),rgba(0, 0, 0, 0.750)) ,url(../images/kettlebell.png);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.750),rgba(0, 0, 0, 0.750)) ,url(/images/kettlebell.png);
   background-size:cover;
   background-repeat: no-repeat;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  flex-direction: column;
+  align-items: stretch;
 }
 
 .wod-container {
@@ -189,7 +196,7 @@ h1 {
 .create-wod-btn {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   margin: 10px;
 }
 
@@ -199,6 +206,7 @@ h1 {
   color: ghostwhite;
   margin-bottom: 10px;
   padding: 10px;
+  align-self: flex-end;
 }
 
 .create-btn:hover {
@@ -211,7 +219,7 @@ h1 {
 
 .wod-detail-section {
   height: 650px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.750),rgba(0, 0, 0, 0.750)) ,url(../images/crossfit-g06070b972_1920.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.750),rgba(0, 0, 0, 0.750)) ,url(/images/crossfit1920.jpg);
   background-size:cover;
   background-repeat: no-repeat;
 }
@@ -256,11 +264,12 @@ flex-wrap: nowrap;
   background-color: rgb(0, 0, 0);
   margin: 10px;
   width: 400px;
+  color: ghostwhite
 }
 
 .go-btn button:hover {
   background-color:rgb(141, 0, 0);
-  border: none
+  border: 1px solid rgb(141, 0, 0);
 }
 
 .edit-delete {
@@ -268,15 +277,20 @@ flex-wrap: nowrap;
   padding: 10px;
   background-color: rgb(141, 0, 0);
   margin: 10px;
+  color: ghostwhite;
 }
 
+.edit-delete-btn button:hover{
+  background-color: black;
+  color: ghostwhite;
+}
 
 /* --------------------------------------------WOD CREATE-------------------------------------------  */
-#wod-form-section {
+.wod-form-section {
   height: 800px;
   margin: 0;
   padding: 8px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.750),rgba(0, 0, 0, 0.750)) ,url(../images/fitness137.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.750),rgba(0, 0, 0, 0.750)) ,url(/images/fitness137.jpg);
   background-size:cover;
   background-repeat: no-repeat;
 }
@@ -314,10 +328,7 @@ flex-wrap: nowrap;
   margin: 20px;
 }
 
-.edit-delete-btn button:hover{
-  background-color: black;
-  border: 1.5px solid rgb(141, 0, 0);
-}
+
 
 /* --------------------------------------------EXERCISES LIST-------------------------------------------  */
 
@@ -392,7 +403,7 @@ flex-wrap: nowrap;
 
 #exercise-details-section {
   height: 620px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.750),rgba(0, 0, 0, 0.750)), url(../images/crossfit-gf7c7be81d_1920.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.750),rgba(0, 0, 0, 0.750)), url(/images/crossfit-gf7c7be81d_1920.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }

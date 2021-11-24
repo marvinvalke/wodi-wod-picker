@@ -11,8 +11,8 @@ let User = require("../models/User.model");
 
 User
   .insertMany([
-    { username: "Marvin", email: "marvin@ironhack.com" , password: "Mil@J@mes2122" },
-    { username: "Hugo", email: "hugo@ironhack.com" , password: "Hug0" },
+    { name: "Marvin", email: "marvin@ironhack.com" , password: "Mil@J@mes2122" },
+    { name: "Hugo", email: "hugo@ironhack.com" , password: "Hug0" },
   ])
 
   .then(() => {

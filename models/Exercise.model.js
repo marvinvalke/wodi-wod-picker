@@ -2,9 +2,9 @@ const { Schema, model } = require("mongoose");
 
 const ExerciseSchema = new Schema({
   name: { type: String, text: true },
-  bodyPart: String,
-  target: String,
-  equipment: String,
+  bodyPart: { type: String, text: true },
+  target: { type: String, text: true },
+  equipment: { type: String, text: true },
   gifUrl: String,
   id: String,
 });

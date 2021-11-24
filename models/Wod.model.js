@@ -1,6 +1,8 @@
 require("./Exercise.model");
 const { Schema, model } = require("mongoose");
 
+require("./User.model");
+
 // The Wod Schema
 const WodSchema = new Schema({
   name: String,
@@ -12,8 +14,8 @@ const WodSchema = new Schema({
   ex1reps: Number,
   ex2reps: Number,
   ex3reps: {
-    type: Number, 
-    default: 0
+    type: Number,
+    default: 0,
   },
   ex4reps: Number,
   ex5reps: Number,
@@ -25,6 +27,10 @@ const WodSchema = new Schema({
   intensity: {
     type: String,
     enum: ["Easy", "Medium", "Hard", "Insane"],
+  },
+  userid: {
+    type: Schema.Types.ObjectId,
+    ref: "User",
   },
 });
 

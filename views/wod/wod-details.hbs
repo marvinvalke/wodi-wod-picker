@@ -1,38 +1,40 @@
 <section class="wod-detail-section">
     <div class="wod-detail-page">
-        <h1>WOD {{theWod.name}} DETAILS</h1>
+        <h1>{{theWod.name}} DETAILS</h1>
         <div class="wod-detail-container">
             <li>Environement - {{theWod.environement}}</li>
             <li>Intensity - {{theWod.intensity}}</li>
             <li>Rounds - {{theWod.rounds}}</li>
             <li>Timer - {{theWod.duration}}</li>
         </div>
-        <hr>
-        <h5>Exercises: </h5>
-        <div class="wod-exercises-container">
-            {{#each theWod.exercises}}
-            <div class="exercise-title-img">
-                <a href="/exercise/{{this._id}}">{{this.name}}</a>
-                <a href="/exercise/{{this._id}}">
-                    <img src="{{this.gifUrl}}" alt="">
-                </a>
-                <h5>{{getmyvalue ../reps @index}}</h5>
-            </div>
-            {{/each}}
-        </div>
-        <hr>
-        <div class="go-btn">
-            <form method="GET" action="/wod/{{theWod._id}}/timer">
-                <button class="btn btn-primary" type="submit">LET'S GO !</button>
-            </form>
-        </div>
-        <div class="edit-delete-btn">
-            <form method="GET" action="/wod/{{theWod._id}}/edit">
-                <button class="edit-delete btn-primary" type="submit">EDIT WOD</button>
-            </form>
-            <form method="POST" action="/wod/{{theWod._id}}/delete">
-                <button class="edit-delete btn-primary" type="submit">DELETE WOD</button>
-            </form>
-        </div>
+        <a href="javascript:history.back()">
+            <- GO BACK </a>
+                <hr>
+                <h5>Exercises: </h5>
+                <div class="wod-exercises-container">
+                    {{#each theWod.exercises}}
+                    <div class="exercise-title-img">
+                        <a href="/exercise/{{this._id}}">{{this.name}}</a>
+                        <a href="/exercise/{{this._id}}">
+                            <img src="{{this.gifUrl}}" alt="">
+                        </a>
+                        <p>{{getmyvalue ../reps @index}} - Reps</p>
+                    </div>
+                    {{/each}}
+                </div>
+                <hr>
+                <div class="go-btn">
+                    <form method="GET" action="/wod/{{theWod._id}}/timer">
+                        <button class="go-btn" type="submit">LET'S GO !</button>
+                    </form>
+                </div>
+                <div class="edit-delete-btn">
+                    <form method="GET" action="/wod/{{theWod._id}}/edit">
+                        <button class="edit-delete" type="submit">EDIT WOD</button>
+                    </form>
+                    <form method="POST" action="/wod/{{theWod._id}}/delete">
+                        <button class="edit-delete" type="submit">DELETE WOD</button>
+                    </form>
+                </div>
     </div>
 </section>

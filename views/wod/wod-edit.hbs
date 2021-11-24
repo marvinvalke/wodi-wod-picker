@@ -1,94 +1,165 @@
-<section id="wod-form-section">
-<h1>EDIT {{theWod.name}}</h1>
-<form method="POST" action="/wod/{{theWod.id}}/edit">
-    <div class="wod-form-container">
-        <label class="form-label">1 - Choose a cooler name:</label>
-        <br>
-        <input class="form-control-create" type=" text" name="name" value="{{theWod.name}}">
-    </div>
-    <div class="wod-form-container">
-        <label class="form-label">2 - Environement:</label>
-        <br>
-        {{#if outsideChecked}}
-        <input type="radio" id="outside" name="environement" value="{{theWod.environement}}" checked>
-        <label for="environement"> Outside</label>
-        <br>
-        <input type="radio" id="inside" name="environement" value="{{theWod.environement}}">
-        <label for="environement"> Inside</label>
-        {{else}}
-        <input type="radio" id="outside" name="environement" value="{{theWod.environement}}">
-        <label for="environement"> Outside</label>
-        <br>
-        <input type="radio" id="inside" name="environement" value="{{theWod.environement}}" checked>
-        <label for="environement"> Inside</label>
-        {{/if}}
-    </div>
-    <div class="wod-form-container">
-        <label class="form-label">3 - How many rounds:</label>
-        <select name="rounds" id="rounds" value="{{theWod.rounds}}">
-            <option>{{theWod.rounds}}</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
+<section class="wod-form-section">
+    <h1>EDIT {{theWod.name}}</h1>
+    <form method="POST" action="/wod/{{theWod.id}}/edit">
+        <div class="wod-form-container">
+            <label class="form-label">1 - Choose a cooler name:</label>
+            <br>
+            <input class="form-control-create" type=" text" name="name" value="{{theWod.name}}">
+        </div>
+        <div class="wod-form-container">
+            <label class="form-label">2 - Environement:</label>
+            <br>
+            {{#if outsideChecked}}
+            <input type="radio" id="outside" name="environement" value="{{theWod.environement}}" checked>
+            <label for="environement"> Outside</label>
+            <br>
+            <input type="radio" id="inside" name="environement" value="{{theWod.environement}}">
+            <label for="environement"> Inside</label>
+            {{else}}
+            <input type="radio" id="outside" name="environement" value="{{theWod.environement}}">
+            <label for="environement"> Outside</label>
+            <br>
+            <input type="radio" id="inside" name="environement" value="{{theWod.environement}}" checked>
+            <label for="environement"> Inside</label>
+            {{/if}}
+        </div>
+        <div class="wod-form-container">
+            <label class="form-label">3 - How many rounds:</label>
+            <select name="rounds" id="rounds" value="{{theWod.rounds}}">
+                <option>{{theWod.rounds}}</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+        </div>
+        <div class="wod-form-container">
+            <label class="form-label">4 - For how long:</label>
+            <select name="duration" id="duration" value="{{theWod.duration}}">
+                <option>{{theWod.duration}}</option>
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="15">15</option>
+                <option value="20">20</option>
+                <option value="25">25</option>
+                <option value="30">30</option>
+                <option value="35">35</option>
+                <option value="40">40</option>
+                <option value="45">45</option>
+                <option value="50">50</option>
+                <option value="45">55</option>
+                <option value="50">60</option>
+            </select>
+        </div>
+        <div class="wod-form-container">
+            <label for='intensity' class="form-label">5 - How hard:</label>
+            <select name="intensity" value="{{theWod.intensity}}">
+                <option>{{theWod.intensity}}</option>
+                <option>Easy</option>
+                <option>Medium</option>
+                <option>Hard</option>
+                <option>Insane</option>
+            </select>
+        </div>
+        <hr>
+        <p>Select new exercises:</p>
+        <select name="exercises">
+            <option value="">New exercise</option>
+            {{#each allExercises}}
+            <option value="{{this._id}}">{{this.name}}</option>
+            {{/each}}
         </select>
-    </div>
-    <div class="wod-form-container">
-        <label class="form-label">4 - For how long:</label>
-        <select name="duration" id="duration" value="{{theWod.duration}}">
-            <option>{{theWod.duration}}</option>
+        <span>-</span>
+        <select name="ex1reps" id="duration">
+            <option>Reps</option>
             <option value="5">5</option>
             <option value="10">10</option>
             <option value="15">15</option>
             <option value="20">20</option>
             <option value="25">25</option>
             <option value="30">30</option>
-            <option value="35">35</option>
-            <option value="40">40</option>
-            <option value="45">45</option>
-            <option value="50">50</option>
-            <option value="45">55</option>
-            <option value="50">60</option>
         </select>
-    </div>
-    <div class="wod-form-container">
-        <label for='intensity' class="form-label">5 - How hard:</label>
-        <select name="intensity" value="{{theWod.intensity}}">
-            <option>{{theWod.intensity}}</option>
-            <option>Easy</option>
-            <option>Medium</option>
-            <option>Hard</option>
-            <option>Insane</option>
+        <br>
+        <select name="exercises">
+            <option value="">New exercise</option>
+            {{#each allExercises}}
+            <option value="{{this._id}}">{{this.name}}</option>
+            {{/each}}
         </select>
-    </div>
-    <hr>
-    <p>Change exercises:</p>
-    {{#each theWod.exercises}}
-    <select name="exercises">
-        {{#each ../allExercises}}
-        <option value="{{this._id}}">{{this.name}}</option>
-        <!-- {{#if this.selected}}
-            <option value="{{../this._id}}" selected>{{this.name}}</option>
-            {{else}}
-            <option value="{{../this._id}}">{{this.name}}</option>
-            {{/if}} -->
-        {{/each}}
-    </select>
-    <br>
-    {{/each}}
-    <div class="edit-delete-btn">
-        <form method="POST" action="/wod/{{theWod._id}}/edit">
-            <button class="btn btn-primary" type="submit">EDIT WOD</button>
-        </form>
-        <form method="POST" action="/wod/{{theWod._id}}/delete">
-            <button class="btn btn-primary" type="submit">DELETE WOD</button>
-        </form>
-    </div>
-</form>
+        <span>-</span>
+        <select name="ex2reps" id="duration">
+            <option>Reps</option>
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+            <option value="25">25</option>
+            <option value="30">30</option>
+        </select>
+        <br>
+        <select name="exercises">
+            <option value="">New exercise</option>
+            {{#each allExercises}}
+            <option value="{{this._id}}">{{this.name}}</option>
+            {{/each}}
+        </select>
+        <span>-</span>
+        <select name="ex3reps" id="duration">
+            <option>Reps</option>
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+            <option value="25">25</option>
+            <option value="30">30</option>
+        </select>
+        <br>
+        <select name="exercises">
+            <option value="">New exercise</option>
+            {{#each allExercises}}
+            <option value="{{this._id}}">{{this.name}}</option>
+            {{/each}}
+        </select>
+        <span>-</span>
+        <select name="ex4reps" id="duration">
+            <option>Reps</option>
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+            <option value="25">25</option>
+            <option value="30">30</option>
+        </select>
+        <br>
+        <select name="exercises">
+            <option value="">New exercise</option>
+            {{#each allExercises}}
+            <option value="{{this._id}}">{{this.name}}</option>
+            {{/each}}
+        </select>
+        <span>-</span>
+        <select name="ex5reps" id="duration">
+            <option>Reps</option>
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+            <option value="25">25</option>
+            <option value="30">30</option>
+        </select>
+        <div class="edit-delete-btn">
+            <form method="POST" action="/wod/{{theWod._id}}/edit">
+                <button class="edit-delete" type="submit">EDIT WOD</button>
+            </form>
+            <form method="POST" action="/wod/{{theWod._id}}/delete">
+                <button class="edit-delete" type="submit">DELETE WOD</button>
+            </form>
+        </div>
+    </form>
 </section>

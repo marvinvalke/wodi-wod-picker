@@ -10,12 +10,12 @@ const UserSchema = new Schema(
     email: {
       type: String,
       require: true,
-      text: true
+      text: true,
     },
     password: {
       type: String,
       require: true,
-    }
+    },
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`

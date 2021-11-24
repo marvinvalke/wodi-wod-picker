@@ -10,16 +10,8 @@ const errorHandling = require("../error-handling");
 //----------------------- ROUTES --------------------------------
 
 router.get("/exercise", (req, res, next) => {
-  //console.log(req.query)
-  //const { search } = req.query;
-  //console.log("the research is for ", req.query);
   const { search } = req.query;
-  //console.log("You searched for ", search);
-  // IF STATEMENT HERE
-
-  //console.log('The search is >' , matchingExercises)
   if (search) {
-    //console.log("MATCHES =>", search),
       Exercise.find({ $text: { $search: search } })
         .then((searchedExercises) => {
           console.log('console logged this' , searchedExercises)

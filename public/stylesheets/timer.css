@@ -18,6 +18,17 @@ WHITE = ghostwhite
   background-size: cover;
 }
 
+.timer-section img{
+  width: 30px;
+}
+
+.spotify {
+  display: flex;
+  justify-content: space-evenly;
+  width: 300px;
+  margin-top: 15px;
+}
+
 .timer-section li {
     list-style: none;
 }
@@ -30,9 +41,11 @@ WHITE = ghostwhite
   text-align: center;
 }
 
-#splits-container li {
-  list-style: decimal;
+.timer-links:hover {
+ color:black;
 }
+
+
   
 #clock {
   box-sizing: border-box;
@@ -67,6 +80,7 @@ WHITE = ghostwhite
 #splits-container li {
   padding-bottom: 5px;
   text-align: right;
+  list-style: decimal;
 }
 
 #milliseconds {
