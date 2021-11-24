@@ -47,23 +47,27 @@
         <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Password"
           required="">
       </div>
-      <label for="inputPassword" class="sr-only"></label>
 
-      <div class="input-group has-validation">
-        <span class="input-group-text"><img src="./images/password.png" alt="" width="30" height="30"></span>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Confirm your password" required="">
-      </div>
-      <label for="inputPassword" class="sr-only"></label>
+      <label for="inputPassword" class="sr-only"></label><br>
 
-
-      <div class="checkbox mb-3">
+      {{!-- <div class="checkbox mb-3">
         <label>
           Are you a Personal Trainer?
           <input type="checkbox" value="PT">
         </label>
-      </div>
+      </div> --}}
+      
       <button class="btn btn-lg btn-danger btn-block" type="submit">Register</button>
     </form>
+    <p>or</p>
+    <div class="social-login">
+      <a href="/login">
+        <img class="mb-4" src="./images/google.png" alt="" width="45" height="45">
+      </a>
+      {{!-- <a href="/login">
+        <img class="mb-4" src="./images/facebook.png" alt="" width="45" height="45">
+      </a> --}}
+    </div>
   </div>
 </section>
 
