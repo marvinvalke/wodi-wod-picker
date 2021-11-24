@@ -11,6 +11,9 @@
       <li class="nav-item">
         <a class="nav-link" href="/wod/create">Create one</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/exercises">Exercises</a>
+      </li>
     </ul>
 
   </div>
@@ -30,9 +33,8 @@
       <img src="./images/daenerys.jpeg" width="100" height="100" alt="..." class="img-thumbnail">
     </div>
     <div class="card-body">
-      <h5 class="card-title">Daenerys Targaryen</h5>
-      <p class="card-text">username: khaleesi</p>
-      <p class="card-text">daenerys@ironhack.com</p>
+      <h5 class="card-title">{{profile.name}}</h5>
+      <p class="card-text">{{profile.email}}</p>
     </div>
     <ul class="list-group list-group-flush">
       <li class="list-group-item btn btn-light">Your favourites</li>
@@ -41,11 +43,11 @@
       <li class="list-group-item btn btn-light">Completed</li>
     </ul>
     <div class="card-body">
-      <form method="GET" action="/profile/{{profile._id}}/edit">
-            <button class="card-link btn btn-warning" type="submit">Edit</button>
+      <form method="GET" action="/profile/edit">
+            <button class="card-link btn btn-warning" type="submit">Edit my information</button>
       </form>
-      <form method="POST" action="/profile/{{profile._id}}/delete">
-            <button class="card-link btn btn-danger" type="submit">Delete</button>
+      <form method="POST" action="/profile/delete">
+            <button class="card-link btn btn-danger" type="submit">Delete my account</button>
       </form>
     </div>
   </div>

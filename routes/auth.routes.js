@@ -96,74 +96,80 @@ router.get("/logout",  (req, res) => {
 });
 
 router.get("/profile", isLoggedIn,  (req, res) => {
-  res.render("auth/profile.hbs")
+  const id = req.session.myProperty._id
+  
+  UserModel.findById(id)
+  .then((profile)=>{
+    res.render("auth/profile.hbs", {profile})
+  })
+  .catch((err) =>{
+    next(err)
+  })
 });
 
 //------------ EDIT USER PROFILE --------------
-router.get("/profile/:id/edit", (req, res, next) =>{
-  const {id} = req.params
+//GET the profile info according to unique ID
+router.get("/profile/edit",isLoggedIn, (req, res, next) =>{
+  const id = req.session.myProperty._id
+  
   UserModel.findById(id)
-  .then((user)=>{
-    res.render("/auth/profile-update.hbs", user)
+  .then((profile)=>{
+    console.log("profile user id", profile);
+    res.render("auth/profile-update.hbs", {profile})
   })
   .catch((err) =>{
     next(err)
   })
 })
-
-router.get('/drones/:id/edit', (req, res, next) => {
-  // Iteration #4: Update the drone
-  const {
-    id
-  } = req.params
-  DroneModel.findById(id)
-    .then((drone) => {
-      console.log(drone)
-      res.render("drones/update-form", drone)
+//POST updated information
+router.post('/profile/edit', (req, res, next) => {
+  const {name,email, password} = req.body
+  let salt = bcrypt.genSaltSync(10);
+  let hash = bcrypt.hashSync(password, salt);
+  const id = req.session.myProperty._id
+  UserModel.findByIdAndUpdate(id, {name: name, email:email, password: hash})
+    .then(() => {
+      res.redirect("/profile")
     })
     .catch((err) => {
-      console.log("Something went wrong: " + err)
+      next(err)
     })
-}); //#4
+});
 
-// router.post('/drones/:id/edit', (req, res, next) => {
-//   // Iteration #4: Update the drone
-//   const {
-//     name,
-//     propellers,
-//     maxSpeed
-//   } = req.body
-//   const {
-//     id
-//   } = req.params
-//   DroneModel.findByIdAndUpdate(id, {
-//       name: name,
-//       propellers: propellers,
-//       maxSpeed: maxSpeed
-//     })
-//     .then(() => {
-//       res.redirect("/drones")
-//     })
-//     .catch((err) => {
-//       console.log("Something went wrong: " + err)
-//     })
-// }); //#4
+//------------- DELETE USER PROFILE --------------
 
-// router.post('/drones/:id/delete', (req, res, next) => {
-//   // Iteration #5: Delete the drone
-//   const {
-//     id
-//   } = req.params
-//   DroneModel.findByIdAndDelete(id)
-//     .then(() => {
-//       console.log("Drone deleted!")
-//       res.redirect("/drones")
-//     })
-//     .catch((err) => {
-//       console.log("Something went wrong: " + err)
-//     })
-// });
+router.post('/profile/delete', (req, res, next) => {
+  const id = req.session.myProperty._id
+  UserModel.findByIdAndDelete(id)
+    .then(() => {
+      console.log("User deleted!")
+      res.redirect("/")
+    })
+    .catch((err) => {
+      next(err)
+    })
+});
 
+// //Cloudinary
+// router.post('/upload-pic', uploader.single("imageUrl"), (req, res, next) => {
+//   // the uploader.single() callback will send the file to cloudinary and get you and obj with the url in return
+
+//   if (!req.file) {
+    
+//         return ;
+//   }
+//   UserModel.findByIdAndUpdate(req.session.myProperty._id, { image:req.file.path})
+//     .then ((user)=>{
+//         res.redirect('/profile')
+//     })
+//     .catch((err)=>{
+//         next(err)
+//     })
+//   // You will get the image url in 'req.file.path'
+//   // Your code to store your url in your database should be here
+// })
+
+/* <img src="{{user.image}}" alt="profile pic"></img> */
 
 
 // EXPORT THE ROUTES

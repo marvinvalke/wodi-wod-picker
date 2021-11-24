@@ -18,7 +18,7 @@ const isLoggedIn = (req, res, next) => {
 router.get(
   "/wod",
    isLoggedIn,  (req, res, next) => {
-    Wod.find()
+    Wod.find({user:req.session.myProperty._id})
       .then((wods) => {
         res.render("wod/wod-list.hbs", { wods });
       })
@@ -75,6 +75,7 @@ router.post(
       rounds,
       duration,
       intensity,
+      user:req.session.myProperty._id
     })
       .then(() => {
         res.redirect("/wod");
