@@ -3,7 +3,7 @@
     <div class="wod-detail-container timer-exercises">
         {{#each theWod.exercises}}
         <a href="/exercise/{{this._id}}">
-            <li>{{this.name}}</li>
+            <li><span>{{getmyvalue ../reps @index}} | <span></span>{{this.name}}</li>
         </a>
 
         {{/each}}

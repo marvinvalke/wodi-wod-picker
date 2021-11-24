@@ -60,7 +60,7 @@ router.post(
       duration,
       intensity,
     } = req.body;
-    console.log("LOOK AT MY REQ BODY" , req.body);
+    console.log("LOOK AT MY REQ BODY", req.body);
     Wod.create({
       name,
       environement,
@@ -93,7 +93,13 @@ router.get(
       .then((theWod) => {
         // GET TO THE DETAILLED WOD
         console.log(theWod);
-        let reps = [theWod.ex1reps, theWod.ex2reps, theWod.ex3reps, theWod.ex4reps, theWod.ex5reps]
+        let reps = [
+          theWod.ex1reps,
+          theWod.ex2reps,
+          theWod.ex3reps,
+          theWod.ex4reps,
+          theWod.ex5reps,
+        ];
 
         res.render("wod/wod-details.hbs", { theWod, reps });
       })
@@ -185,7 +191,14 @@ router.get("/wod/:id/timer", (req, res, next) => {
   Wod.findById(id)
     .populate("exercises")
     .then((theWod) => {
-      res.render("wod/timer.hbs", { theWod });
+      let reps = [
+        theWod.ex1reps,
+        theWod.ex2reps,
+        theWod.ex3reps,
+        theWod.ex4reps,
+        theWod.ex5reps,
+      ];
+      res.render("wod/timer.hbs", { theWod, reps });
     })
     .catch((err) => {
       next(err);
