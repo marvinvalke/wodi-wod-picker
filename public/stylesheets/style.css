@@ -1,8 +1,39 @@
-/*
-RED = rgb(141, 0, 0)
+/* RED = rgb(141, 0, 0)
 GREY = rgb(36, 35, 35)
-WHITE = ghostwhite 
-*/
+WHITE = ghostwhite */
+
+/* Hugo's styles */
+
+.index-div{
+  height: 400px;
+}
+.surrounded{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.centralise{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-body {
+  color: black;
+}
+
+.navbar{
+  padding: 5px 15px 5px 15px;
+}
+
+#welcome-bg {
+  height: 500px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.750),rgba(0, 0, 0, 0.750)) ,url(../images/bg.jpeg);
+  background-size:cover;
+  background-repeat: no-repeat;
+}
+
 /* --------------------------------------------GLOBAL STYLES-------------------------------------------  */
 body {
 font-family: 'Lora', serif;
@@ -44,13 +75,6 @@ h1 {
   margin-top: 20px;
 }
 
-.centralise{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-}
-
 .btn-danger {
   background-color: rgb(141, 0, 0);
   border: none;
@@ -59,14 +83,14 @@ h1 {
 .btn-danger:hover {
   background-color: black;
   border: none;
-  border: 1px solid rgb(141, 0, 0);
+  border: 1.5px solid rgb(141, 0, 0);
 }
 
 
 /* --------------------------------------------WOD LIST-------------------------------------------  */
 
 #wod-list-section {
-  height: 700px;
+  height: 800px;
   background-image: linear-gradient(rgba(0, 0, 0, 0.750),rgba(0, 0, 0, 0.750)) ,url(../images/crossfit-g06070b972_1920.jpg);
   background-size:cover;
   background-repeat: no-repeat;
@@ -93,7 +117,7 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 30px;
+  margin: 10px;
 }
 
 /* --------------------------------------------WOD DEATILS-------------------------------------------  */
@@ -106,9 +130,9 @@ h1 {
 }
 
 .wod-detail-container li {
-  border: 1px solid rgb(141, 0, 0);
+  border: 1.5px solid rgb(141, 0, 0);
   padding: 10px;
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(36, 35, 35);
   border-radius: 20px;
   margin: 10px;
 
@@ -126,31 +150,10 @@ flex-wrap: nowrap;
   border-radius: 20px;
 }
 
-.go-btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.go-btn button {
-  border: 1px solid rgb(141, 0, 0);
-  padding: 10px;
-  background-color: rgb(0, 0, 0);
-  border-radius: 10px 0px 10px 0px;
-  margin: 10px;
-  width: 400px;
-}
-
-.go-btn button:hover {
-  background-color:rgb(141, 0, 0)
-}
-
-
 /* --------------------------------------------WOD CREATE-------------------------------------------  */
 #wod-form-section {
   height: 800px;
-  margin: 0;
-  padding: 8px;
+  padding: 20px;
   background-image: linear-gradient(rgba(0, 0, 0, 0.750),rgba(0, 0, 0, 0.750)) ,url(../images/man-g16145928b_1920.jpg);
   background-size:cover;
   background-repeat: no-repeat;
@@ -162,7 +165,7 @@ flex-wrap: nowrap;
   margin: 20px;
 }
 
-.create-a-wod-btn.button{
+.create-a-wod-btn > button{
   margin: 20px;
 }
 
@@ -211,22 +214,9 @@ flex-wrap: nowrap;
   justify-content: space-evenly;
   align-items: center;
 }
-.searched-exercises {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-}
-
-.searched-exercise-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 30px 10px;
-}
 
 .searched-exercises img{
-  width: 200px;
+  width: 250px;
   border-radius: 20px;
 }
 
@@ -267,8 +257,7 @@ flex-wrap: nowrap;
 /* --------------------------------------------EXERCISE DETAILS-------------------------------------------  */
 
 #exercise-details-section {
-  height: 700px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.750),rgba(0, 0, 0, 0.750)), url(../images/crossfit-gf7c7be81d_1920.jpg);
+  background-image: url(../images/crossfit-g06070b972_1920.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -289,15 +278,12 @@ flex-wrap: nowrap;
 }
 
 .exercice-detail li{
-  width: 300px;
   font-size: 1.2em;
   border: 1.5px solid rgb(141, 0, 0);
-  padding: 10px 20px 10px 20px;
-  background-color: black;
+  padding: 10px;
+  background-color: rgb(36, 35, 35);
   border-radius: 20px;
   margin: 20px;
-  display: flex;
-  justify-content: space-between;
 }
 
 .go-back {
