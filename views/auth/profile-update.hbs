@@ -23,22 +23,47 @@
 <label for=""></label><br>
 <label for=""></label><br>
 
-<h2>Update your profile</h2>
-<form action="edit" method="POST">
-  <label class="form-label">
-    <h4>Name</h4>
-  </label>
-  <input class="form-control" type="string" name="name" placeholder="{{name}}" /><br>
+<h2>Update your profile </h2>
+<form action="edit" method="POST" action="/profile/edit">
+  <div class="text-center">
+  
+    <a href="/">
+      <img class="mb-4" src="./images/woodpecker.png" alt="" width="72" height="72">
+    </a>
 
-  <label class="form-label">
-    <h4>How many propellers does it have?</h4>
-  </label>
-  <input class="form-control" type="number" name="propellers" placeholder="{{propellers}}" /><br>
+     <div class="input-group has-validation">
+      <span class="input-group-text"><img src="./images/id-card.png" alt="" width="30" height="30"></span>
+      <input type="name" id="inputName" class="form-control" name="name" placeholder="Name" required="" autofocus="" value="{{profile.name}}">
+    </div>
+    <label for="" class="sr-only"></label>
 
-  <label class="form-label">
-    <h4>How fast can it go?</h4>
-  </label>
-  <input class="form-control" type="number" name="maxSpeed" placeholder="{{maxSpeed}}" /><br>
+    <div class="input-group has-validation">
+      <span class="input-group-text"><img src="./images/arroba.png" alt="" width="30" height="30"></span>
+      <input type="email" id="inputEmail" class="form-control" name="email" placeholder="you@example.com" required="" autofocus="" value="{{profile.email}}">
+    </div>
+    <label for="inputEmail" class="sr-only"></label>
+
+    <div class="input-group has-validation">
+      <span class="input-group-text"><img src="./images/password.png" alt="" width="30" height="30"></span>
+      <input type="password" id="inputPassword" class="form-control" name="password" placeholder="New password" required="">
+    </div>
+    <label for="inputPassword" class="sr-only"></label>
+
+    <div class="input-group has-validation">
+      <span class="input-group-text"><img src="./images/password.png" alt="" width="30" height="30"></span>
+      <input type="password" id="inputPassword" class="form-control" placeholder="Confirm your new password" required="">
+    </div>
+    <label for="inputPassword" class="sr-only"></label>
+
+
+    <div class="checkbox mb-3">
+      <label>
+        Are you a Personal Trainer?
+        <input type="checkbox" value="PT">
+      </label>
+    </div>
+  
+</div>
 
   <button class="btn btn-primary" type="submit">Submit!</button>
 </form>

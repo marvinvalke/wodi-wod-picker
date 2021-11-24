@@ -1,4 +1,5 @@
 require("./Exercise.model");
+require("./User.model");
 const { Schema, model } = require("mongoose");
 
 require("./User.model");
@@ -28,10 +29,17 @@ const WodSchema = new Schema({
     type: String,
     enum: ["Easy", "Medium", "Hard", "Insane"],
   },
+<<<<<<< HEAD
   userid: {
     type: Schema.Types.ObjectId,
     ref: "User",
   },
+=======
+  user:{
+    type: Schema.Types.ObjectId,
+    ref: "user"
+  }
+>>>>>>> 9b7fcb4bb3552cef20e1b13b4fc3bd3e0e807769
 });
 
 const Wod = model("wod", WodSchema);

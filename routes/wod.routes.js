@@ -15,6 +15,7 @@ const isLoggedIn = (req, res, next) => {
 
 //-------------------------------PROTECTED ROUTES------------------------------------
 // USER CAN SEE ALL HIS WODS
+<<<<<<< HEAD
 router.get("/wod", isLoggedIn, (req, res, next) => {
   Wod.find({ userid: req.session.myProperty })
     .then((wods) => {
@@ -24,6 +25,20 @@ router.get("/wod", isLoggedIn, (req, res, next) => {
       next(err);
     });
 });
+=======
+router.get(
+  "/wod",
+   isLoggedIn,  (req, res, next) => {
+    Wod.find({user:req.session.myProperty._id})
+      .then((wods) => {
+        res.render("wod/wod-list.hbs", { wods });
+      })
+      .catch((err) => {
+        next(err);
+      });
+  }
+);
+>>>>>>> 9b7fcb4bb3552cef20e1b13b4fc3bd3e0e807769
 let allTheExercises = [];
 // USER CAN CREATE A WOD
 router.get("/wod/create", isLoggedIn, (req, res, next) => {
@@ -40,6 +55,7 @@ router.get("/wod/create", isLoggedIn, (req, res, next) => {
 });
 
 // CREATING A WOD IF SUCCESS GO BACK TO WOD LIST PAGE OTHERWISE REDIRECT TO CREATE A WOD PAGE
+<<<<<<< HEAD
 router.post("/wod/create", isLoggedIn, (req, res, next) => {
   const {
     name,
@@ -70,6 +86,38 @@ router.post("/wod/create", isLoggedIn, (req, res, next) => {
   })
     .then(() => {
       res.redirect("/wod");
+=======
+router.post(
+  "/wod/create",
+  isLoggedIn, (req, res, next) => {
+    const {
+      name,
+      environement,
+      exercises,
+      ex1reps,
+      ex2reps,
+      ex3reps,
+      ex4reps,
+      ex5reps,
+      rounds,
+      duration,
+      intensity,
+    } = req.body;
+    console.log("LOOK AT MY REQ BODY" , req.body);
+    Wod.create({
+      name,
+      environement,
+      exercises,
+      ex1reps,
+      ex2reps,
+      ex3reps,
+      ex4reps,
+      ex5reps,
+      rounds,
+      duration,
+      intensity,
+      user:req.session.myProperty._id
+>>>>>>> 9b7fcb4bb3552cef20e1b13b4fc3bd3e0e807769
     })
     .catch((err) => {
       res.render("wod/wod-create.hbs");
