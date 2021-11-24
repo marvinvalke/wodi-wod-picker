@@ -84,12 +84,17 @@ const isLoggedIn = (req, res, next) => {
   }
 };
 
-router.get("/welcome", isLoggedIn, (req, res, next) => {
-  let theUsername = req.session.myProperty;
-  res.render("auth/welcome.hbs", {
-    username: theUsername.username
-  });
+router.get("/welcome", isLoggedIn,  (req, res) => {
+  const id = req.session.myProperty._id
+  UserModel.findById(id)
+  .then((profile)=>{
+    res.render("auth/welcome.hbs", {profile})
+  })
+  .catch((err) =>{
+    next(err)
+  })
 });
+
 router.get("/logout",  (req, res) => {
   req.session.destroy();
   res.redirect("/login");
@@ -97,7 +102,6 @@ router.get("/logout",  (req, res) => {
 
 router.get("/profile", isLoggedIn,  (req, res) => {
   const id = req.session.myProperty._id
-  
   UserModel.findById(id)
   .then((profile)=>{
     res.render("auth/profile.hbs", {profile})
@@ -127,7 +131,7 @@ router.post('/profile/edit', (req, res, next) => {
   let salt = bcrypt.genSaltSync(10);
   let hash = bcrypt.hashSync(password, salt);
   const id = req.session.myProperty._id
-  UserModel.findByIdAndUpdate(id, {name: name, email:email, password: hash})
+  UserModel.findByIdAndUpdate(id, {name:name, email:email, password: hash})
     .then(() => {
       res.redirect("/profile")
     })
