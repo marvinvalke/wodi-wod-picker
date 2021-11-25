@@ -26,12 +26,8 @@ WHITE = ghostwhite */
   color: black;
 }
 
-.navbar{
-  padding: 5px 15px 5px 15px;
-}
-
 #welcome-bg {
-  height: 650px;
+  height: 680px;
   background-image: linear-gradient(rgba(0, 0, 0, 0.750),rgba(0, 0, 0, 0.750)) ,url(/images/bg.jpeg);
   background-size:cover;
   background-repeat: no-repeat;
@@ -51,13 +47,14 @@ padding: 0px;
 
 
 .navbar {
+  padding: 5px 15px 5px 15px;
   position: relative;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  padding-top: 0rem;
-  padding-bottom: 0rem;
+  -webkit-box-shadow: 0px 1px 8px 1px rgba(255,255,255,0.94); 
+  box-shadow: 0px 1px 8px 1px rgba(255,255,255,0.94);
 }
 
 footer {
@@ -95,6 +92,7 @@ h1 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   text-transform: uppercase;
+  margin: 15px;
   margin-bottom: 30px;
 }
 
@@ -112,10 +110,12 @@ h1 {
 
 
 
+
+
 /* --------------------------------------------LANDING PAGE-------------------------------------------  */
 
 .landing-page {
-  height: 650px;
+  height: 680px;
   background-image: linear-gradient(rgba(0, 0, 0, 0.750),rgba(0, 0, 0, 0.750)) ,url(/images/manRope.jpg);
   background-size:cover;
   background-repeat: no-repeat;
@@ -138,7 +138,7 @@ h1 {
 
 /* --------------------------------------------LOGIN PAGE-------------------------------------------  */
 .login-page {
-  height: 650px;
+  height: 680px;
   background-image: linear-gradient(rgba(0, 0, 0, 0.750),rgba(0, 0, 0, 0.750)) ,url(/images/womanDumbbell.jpg);
   background-size:cover;
   background-repeat: no-repeat;
@@ -150,7 +150,7 @@ h1 {
 
 
 .register-page {
-  height: 650px;
+  height: 680px;
   background-image: linear-gradient(rgba(0, 0, 0, 0.750),rgba(0, 0, 0, 0.750)) ,url(/images/manSnatch.jpg);
   background-size:cover;
   background-repeat: no-repeat;
@@ -162,7 +162,7 @@ h1 {
 /* --------------------------------------------WOD LIST-------------------------------------------  */
 
 #wod-list-section {
-  height: 650px;
+  height: 680px;
   background-image: linear-gradient(rgba(0, 0, 0, 0.750),rgba(0, 0, 0, 0.750)) ,url(/images/kettlebell.png);
   background-size:cover;
   background-repeat: no-repeat;
@@ -224,8 +224,8 @@ h1 {
 /* --------------------------------------------WOD DEATILS-------------------------------------------  */
 
 .wod-detail-section {
-  height: 650px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.750),rgba(0, 0, 0, 0.750)) ,url(/images/crossfit1920.jpg);
+  height: 680px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.750),rgba(0, 0, 0, 0.750)) ,url(/images/crossfit1920.png);
   background-size:cover;
   background-repeat: no-repeat;
   padding: 10px;
@@ -294,7 +294,7 @@ flex-wrap: nowrap;
 
 /* --------------------------------------------WOD CREATE-------------------------------------------  */
 .wod-form-section {
-  height: 800px;
+  height: 850px;
   margin: 0;
   padding: 10px;
   background-image: linear-gradient(rgba(0, 0, 0, 0.750),rgba(0, 0, 0, 0.750)) ,url(/images/fitness137.jpg);
@@ -476,8 +476,8 @@ flex-wrap: nowrap;
 /* --------------------------------------------EXERCISE DETAILS-------------------------------------------  */
 
 #exercise-details-section {
-  height: 620px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.750),rgba(0, 0, 0, 0.750)), url(/images/crossfit1920.jpg);
+  height: 680px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.750),rgba(0, 0, 0, 0.750)), url(/images/crossfit1920.png);
   background-repeat: no-repeat;
   background-size: cover;
   padding: 10px;
@@ -507,6 +507,7 @@ flex-wrap: nowrap;
   display: flex;
   justify-content: space-between;
   clip-path: polygon(5% 1%, 100% 0, 95% 100%, 0% 100%);
+  width: 350px;
 }
 
 .go-back {
@@ -521,7 +522,7 @@ flex-wrap: nowrap;
 /* --------------------------------------------ERROR PAGES-------------------------------------------  */
 
 .error{
-  height: 620px;
+  height: 680px;
   background-image: linear-gradient(rgba(0, 0, 0, 0.750),rgba(0, 0, 0, 0.750)), url(/images/arnold.jpg);
   background-repeat: no-repeat;
   background-size: cover;

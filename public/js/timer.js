@@ -98,11 +98,14 @@ btnRightElement.addEventListener("click", () => {
 
 rapMusic.addEventListener("click", () => {
   if (rapAudio.paused) {
-    rapAudio.play();
-    startAudio.volume = 0.1;
     jazzAudio.pause();
+    jazzAudio.currentTime = 0;
     hardAudio.pause();
+    hardAudio.currentTime = 0;
     technoAudio.pause();
+    technoAudio.currentTime = 0;
+    rapAudio.volume = 0.3;
+    rapAudio.play();
   } else {
     rapAudio.pause();
   }
@@ -110,11 +113,14 @@ rapMusic.addEventListener("click", () => {
 
 jazzMusic.addEventListener("click", () => {
   if (jazzAudio.paused) {
-    jazzAudio.play();
-    startAudio.volume = 0.1;
     rapAudio.pause();
+    rapAudio.currentTime = 0;
     hardAudio.pause();
+    hardAudio.currentTime = 0;
     technoAudio.pause();
+    technoAudio.currentTime = 0;
+    jazzAudio.volume = 0.3;
+    jazzAudio.play();
   } else {
     jazzAudio.pause();
   }
@@ -122,11 +128,14 @@ jazzMusic.addEventListener("click", () => {
 
 hardMusic.addEventListener("click", () => {
   if (hardAudio.paused) {
-    hardAudio.play();
-    startAudio.volume = 0.1;
-    rapAudio.pause();
     jazzAudio.pause();
+    jazzAudio.currentTime = 0;
+    rapAudio.pause();
+    rapAudio.currentTime = 0;
     technoAudio.pause();
+    technoAudio.currentTime = 0;
+    hardAudio.volume = 0.3;
+    hardAudio.play();
   } else {
     hardAudio.pause();
   }
@@ -134,11 +143,14 @@ hardMusic.addEventListener("click", () => {
 
 technoMusic.addEventListener("click", () => {
   if (technoAudio.paused) {
-    technoAudio.play();
-    startAudio.volume = 0.1;
-    rapAudio.pause();
-    hardAudio.pause();
     jazzAudio.pause();
+    jazzAudio.currentTime = 0;
+    hardAudio.pause();
+    hardAudio.currentTime = 0;
+    rapAudio.pause();
+    rapAudio.currentTime = 0;
+    technoAudio.volume = 0.3;
+    technoAudio.play();
   } else {
     technoAudio.pause();
   }
