@@ -3,6 +3,9 @@ GREY = rgb(36, 35, 35)
 WHITE = ghostwhite */
 
 /* Hugo's styles */
+.social-login{
+  margin-top: 0;
+}
 
 .index-div{
   height: 400px;
