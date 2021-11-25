@@ -1,6 +1,7 @@
 {{!-- header for unauthorised users --}}
-{{>headerpartial}}
 
+
+{{!-- login for for the user --}}
 <section class="login-page">
   <div class="text-center">
     <form class="form-signin" method="post" action="/login">
@@ -30,20 +31,11 @@
     <div class="social-login">
       <div class="input-group has-validation">
         <span class="input-group-text"><img src="./images/google.png" alt="" width="30" height="30"></span>
-        <button class="btn btn-lg btn-danger btn-block" type="submit">Login with Google</button>
+        <button href="/auth/google" class="btn btn-lg btn-danger btn-block" type="submit">Login with Google</button>
       </div>
     </div>
-
-  TESTING:
-  <div>
-    <a href="/auth/google">Login With Google</a>
   </div>
-
-    
-      
-    </div>
 
 </section>
 
 <!-- footer for unauthorised users -->
-{{>footerpartial}}
