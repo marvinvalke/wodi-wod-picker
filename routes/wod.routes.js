@@ -69,7 +69,7 @@ router.post("/wod/create", isLoggedIn, (req, res, next) => {
     rounds,
     duration,
     intensity,
-    userid: req.session.myProperty._id,
+    user: req.session.myProperty._id,
   })
     .then(() => {
       res.redirect("/wod");

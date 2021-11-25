@@ -1,30 +1,9 @@
-<!-- //this is the homepage of the website, appears after the user signs in -->
+<!-- this is the homepage of the website, appears after the user signs in -->
+{{!-- header --}}
 
+
+{{!-- greeting the authorised user --}}
 <section id="welcome-bg">
-  <!-- navbar for logged in users-->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <a class="navbar-brand" href="/welcome">
-      Wod[i]Wodpicker
-    </a>
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="/wod">Your WODs</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/wod/create">Create one</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/exercise">Exercises</a>
-      </li>
-    </ul>
-
-  </div>
-  <span class="navbar-text">
-    <a href="/profile">Profile</a> | <a href="/logout">Logout</a>
-  </span>
-</nav>
-
 {{!-- greeting message, calling the user by the name and asking about the mood/motivation --}}
 <div class="text-center">
   <h1>Welcome, {{profile.name}}!</h1>
@@ -234,9 +213,7 @@
   </div>
 </div> --}}
 </section>
-<!-- //Welcome message with the user's name and mood-picker with 3 options -->
 
+<!-- footer -->
 
-<!-- //the footer is the same in every single page -->
-<!-- MOVED THE FOOTER TO LAYOUT -->
 

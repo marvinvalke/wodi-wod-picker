@@ -134,6 +134,7 @@ router.post('/profile/edit', (req, res, next) => {
   UserModel.findByIdAndUpdate(id, {name:name, email:email, password: hash})
     .then(() => {
       res.redirect("/profile")
+      //res.send("Profile updated successfully!")
     })
     .catch((err) => {
       next(err)
@@ -174,6 +175,28 @@ router.post('/profile/delete', (req, res, next) => {
 // })
 
 /* <img src="{{user.image}}" alt="profile pic"></img> */
+
+//---------- GOOGLE AUTH ROUTES --------------
+// routes/auth-routes.js
+const passport = require("passport")
+
+router.get(
+  "/auth/google",
+  passport.authenticate("google", {
+    scope: [
+      "https://www.googleapis.com/auth/userinfo.profile",
+      "https://www.googleapis.com/auth/userinfo.email"
+    ]
+  })
+);
+router.get(
+  "/auth/google/callback",
+  passport.authenticate("google", {
+    successRedirect: "/",
+    failureRedirect: "/login" // here you would redirect to the login page using traditional login approach
+  })
+);
+
 
 
 // EXPORT THE ROUTES

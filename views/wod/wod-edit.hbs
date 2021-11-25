@@ -1,3 +1,6 @@
+{{!-- same header for authorised users --}}
+
+{{!-- for for editing your WOD --}}
 <section class="wod-form-section">
     <h1>EDIT {{theWod.name}}</h1>
     <form method="POST" action="/wod/{{theWod.id}}/edit">
@@ -163,3 +166,5 @@
         </div>
     </form>
 </section>
+
+{{!-- same footer for authorised users --}}
