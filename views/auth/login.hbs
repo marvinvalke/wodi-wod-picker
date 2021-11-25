@@ -3,7 +3,7 @@
 
 {{!-- login for for the user --}}
 <section class="login-page">
-  <div class="text-center">
+  <div class="login-form">
     <form class="form-signin" method="post" action="/login">
       <a href="/">
         <img class="mb-4" src="./images/woodpecker.png" alt="" width="72" height="72">
@@ -11,28 +11,29 @@
       <h1 class="h3 mb-3 font-weight-normal">Please login:</h1>
       <label for="inputEmail" class="sr-only"></label>
 
-      <div class="input-group has-validation">
+      <div class="input-group-login has-validation">
         <span class="input-group-text"><img src="./images/arroba.png" alt="" width="30" height="30"></span>
         <input type="email" id="inputEmail" class="form-control" name="email" placeholder="you@example.com" required=""
           autofocus="">
       </div>
       <label for="inputEmail" class="sr-only"></label>
 
-      <div class="input-group has-validation">
+      <div class="input-group-login has-validation">
         <span class="input-group-text"><img src="./images/password.png" alt="" width="30" height="30"></span>
         <input type="password" id="inputPassword" class="form-control" placeholder="Password" required=""
           name="password">
       </div>
       <label for="inputPassword" class="sr-only"></label><br>
 
-      <button class="btn btn-lg btn-danger btn-block" type="submit">Login</button>
+      <button class="btn btn-lg btn-danger" type="submit">Login</button>
     </form>
     <p>or</p>
     <div class="social-login">
-      <div class="input-group has-validation">
-        <span class="input-group-text"><img src="./images/google.png" alt="" width="30" height="30"></span>
-        <button href="/auth/google" class="btn btn-lg btn-danger btn-block" type="submit">Login with Google</button>
-      </div>
+
+
+      <button href="/auth/google" class="btn btn-lg btn-danger btn-block" type="submit"><img class="google-img"
+          src="/images/google.png" alt=""> <span>|</span> Use your Google account</button>
+
     </div>
   </div>
 

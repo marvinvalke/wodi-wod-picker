@@ -3,10 +3,6 @@ GREY = rgb(36, 35, 35)
 WHITE = ghostwhite */
 
 /* Hugo's styles */
-.social-login{
-  margin-top: 0;
-}
-
 .index-div{
   height: 400px;
 }
@@ -14,6 +10,7 @@ WHITE = ghostwhite */
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 20px;
 }
 
 .centralise{
@@ -23,7 +20,7 @@ WHITE = ghostwhite */
 }
 
 .card-body {
-  color: black;
+  color: ghostwhite;
 }
 
 #welcome-bg {
@@ -122,6 +119,15 @@ h1 {
   padding: 10px;
 }
 
+.landing-page > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 600px;
+  text-align: center;
+}
+
 .text-center {
   text-align: center!important;
   height: 600px;
@@ -129,6 +135,8 @@ h1 {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  -webkit-box-shadow: 5px 5px 15px 5px #000000; 
+  box-shadow: 5px 5px 15px 5px #000000;
 }
 
 .text-center button {
@@ -145,6 +153,26 @@ h1 {
   padding: 10px;
 }
 
+.login-page p {
+  margin-top: 15px;
+}
+
+.login-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 80px;
+}
+
+.form-signin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
 
 /* -----------------------------------------REGISTER PAGE-------------------------------------------  */
 
@@ -158,6 +186,103 @@ h1 {
 }
 
 
+/* --------------------------------------------PROFILE PAGE-------------------------------------------  */
+
+.profile-section {
+  height: 680px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.750),rgba(0, 0, 0, 0.750)) ,url(/images/bg.jpeg);
+  background-size:cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 10px;
+}
+
+.card-link {
+  background-color: black;
+  border: 1px solid rgb(141, 0, 0);
+  color: ghostwhite;
+  margin-bottom: 10px;
+  padding: 10px;
+  align-self: flex-end;
+}
+
+.card-link:hover {
+  background-color: ghostwhite;
+  border: 1px solid black;
+  color: black;
+}
+
+.text-center {
+  text-align: center!important;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: rgb(141, 0, 0, 0.8);
+  padding: 10px , 0px;
+}
+
+.input-group-login {
+  background-color: rgb(141, 0, 0, 0.8);
+  width: 600px;
+  display: flex;
+  justify-content: space-around;
+  margin: 10px,0px;
+}
+
+.btn-lg {
+  margin-top: 15px;
+}
+
+.btn-block {
+  width: 300px;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+}
+
+.btn-block span {
+  font-size: 1.2em;
+  letter-spacing: 2px;
+}
+
+.google-img {
+  width:30px
+}
+
+/* --------------------------------------------WELCOME PAGE-------------------------------------------  */
+
+
+.welcome-text-center {
+  text-align: center!important;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.input-group {
+  font-size: 1.2em;
+  background-color: rgb(141, 0, 0, 0.8);
+  width: 600px;
+  display: flex;
+  justify-content: space-around;
+  -webkit-box-shadow: 0px 3px 10px 4px #ffffff; 
+  box-shadow: 0px 3px 10px 4px #ffffff;
+}
+
+.input-group a:hover{
+  color:black
+}
 
 /* --------------------------------------------WOD LIST-------------------------------------------  */
 
