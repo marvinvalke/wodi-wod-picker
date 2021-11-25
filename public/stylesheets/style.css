@@ -418,6 +418,7 @@ flex-wrap: nowrap;
 .mySlides {
   display: none;
   text-align: center;
+  margin-bottom: 30px;
 }
 
 .prev, .next {

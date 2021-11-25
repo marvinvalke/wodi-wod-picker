@@ -9,10 +9,15 @@ WHITE = ghostwhite
   src: url('fonts/ds-digib.ttf');
 }
 
-
+#btnLeft {
+  margin-bottom: 20px;
+}
+#btnRight {
+  margin-bottom: 20px;
+}
 
 .timer-section {
-  height: 620px;
+  height: 650px;
   background-image: linear-gradient(rgba(0, 0, 0, 0.750),rgba(0, 0, 0, 0.750)), url(../images/gym.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -23,6 +28,13 @@ WHITE = ghostwhite
 }
 
 .spotify {
+  display: flex;
+  justify-content: space-evenly;
+  width: 300px;
+  margin-top: 15px;
+}
+
+.music-links {
   display: flex;
   justify-content: space-evenly;
   width: 300px;
@@ -67,7 +79,7 @@ WHITE = ghostwhite
   display:flex;
   align-items:flex-start;
   justify-content:center;
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 #splits-container {
@@ -168,3 +180,4 @@ WHITE = ghostwhite
   background: ghostwhite;
   border: #162f53;
 } 
+

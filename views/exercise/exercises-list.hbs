@@ -7,38 +7,39 @@
             <button class="search-btn">Search</button>
         </form>
     </div>
+    <a href="javascript:history.back()">
+        <- GO BACK </a>
 
-
-    <div class='searched-exercises'>
-        <div class="slideshow-container">
-            {{#each searchedExercises}}
-            <div class="searched-exercise-box">
-                <div class="mySlides fade">
-                    <h5 class='all-exercises-title'>ALL EXERCISES FOR </h5>
-                    <p> <a href="/exercise/{{this._id}}">{{this.name}}</a></p>
-                    <a href="/exercise/{{this._id}}">
-                        <img src="{{this.gifUrl}}" alt="ExerciseGif">
-                    </a>
+            <div class='searched-exercises'>
+                <div class="slideshow-container">
+                    {{#each searchedExercises}}
+                    <div class="searched-exercise-box">
+                        <div class="mySlides fade">
+                            <h5 class='all-exercises-title'>EXERCISES YOU SEARCHED FOR: </h5>
+                            <p> <a href="/exercise/{{this._id}}">{{this.name}}</a></p>
+                            <a href="/exercise/{{this._id}}">
+                                <img src="{{this.gifUrl}}" alt="ExerciseGif">
+                            </a>
+                        </div>
+                    </div>
+                    {{/each}}
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
                 </div>
             </div>
-            {{/each}}
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
-        </div>
-    </div>
-    <div class="exercises-list">
-        <div class="slideshow-container">
-            {{#each allExercises}}
-            <div class="exercise-name-img">
-                <div class="mySlides fade">
-                    <h5 class='all-exercises-title'>ALL OUR EXERCISES</h5>
-                    <a href="/exercise/{{this._id}}">
-                        <img src="{{this.gifUrl}}" alt="ExerciseGif">
-                    </a>
+            <div class="exercises-list">
+                <div class="slideshow-container">
+                    {{#each allExercises}}
+                    <div class="exercise-name-img">
+                        <div class="mySlides fade">
+                            <h5 class='all-exercises-title'>ALL OUR EXERCISES</h5>
+                            <a href="/exercise/{{this._id}}">
+                                <img src="{{this.gifUrl}}" alt="ExerciseGif">
+                            </a>
+                        </div>
+                    </div>
+                    {{/each}}
                 </div>
             </div>
-            {{/each}}
-        </div>
-    </div>
-    <script src="/js/slide.js"></script>
+            <script src="/js/slide.js"></script>
 </section>

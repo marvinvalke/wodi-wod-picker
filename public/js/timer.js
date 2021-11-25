@@ -12,6 +12,19 @@ const secUniElement = document.getElementById("secUni");
 const milDecElement = document.getElementById("milDec");
 const milUniElement = document.getElementById("milUni");
 const splitsElement = document.getElementById("splits");
+const rapMusic = document.getElementById("rap");
+const jazzMusic = document.getElementById("jazz");
+const hardMusic = document.getElementById("hard");
+const technoMusic = document.getElementById("techno");
+
+let rapAudio = new Audio();
+rapAudio.src = "/music/rap.mp3";
+let jazzAudio = new Audio();
+jazzAudio.src = "/music/jazz.mp3";
+let hardAudio = new Audio();
+hardAudio.src = "/music/hard.mp3";
+let technoAudio = new Audio();
+technoAudio.src = "/music/techno.mp3";
 
 function printTime() {
   printSeconds();
@@ -80,5 +93,53 @@ btnRightElement.addEventListener("click", () => {
     clearSplits();
   } else {
     printSplit();
+  }
+});
+
+rapMusic.addEventListener("click", () => {
+  if (rapAudio.paused) {
+    rapAudio.play();
+    startAudio.volume = 0.1;
+    jazzAudio.pause();
+    hardAudio.pause();
+    technoAudio.pause();
+  } else {
+    rapAudio.pause();
+  }
+});
+
+jazzMusic.addEventListener("click", () => {
+  if (jazzAudio.paused) {
+    jazzAudio.play();
+    startAudio.volume = 0.1;
+    rapAudio.pause();
+    hardAudio.pause();
+    technoAudio.pause();
+  } else {
+    jazzAudio.pause();
+  }
+});
+
+hardMusic.addEventListener("click", () => {
+  if (hardAudio.paused) {
+    hardAudio.play();
+    startAudio.volume = 0.1;
+    rapAudio.pause();
+    jazzAudio.pause();
+    technoAudio.pause();
+  } else {
+    hardAudio.pause();
+  }
+});
+
+technoMusic.addEventListener("click", () => {
+  if (technoAudio.paused) {
+    technoAudio.play();
+    startAudio.volume = 0.1;
+    rapAudio.pause();
+    hardAudio.pause();
+    jazzAudio.pause();
+  } else {
+    technoAudio.pause();
   }
 });
