@@ -57,15 +57,11 @@ UserModel.find({email})
         req.session.myProperty = userObj;
         res.redirect("/welcome");
       } else {
-        res.render("auth/login.hbs", {
-          error: "Your password is incorrect"
-        })
+        res.render('auth/login.hbs', {error: "Login failed: the password you entered is incorrect."})
         return;
       }
     } else {
-      res.render("auth/login.hbs", {
-        error: "Email does not exist"
-      })
+      res.render("auth/login.hbs", {error: "Login failed: email does not exist."})
       return;
     }
   })

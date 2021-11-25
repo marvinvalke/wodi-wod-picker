@@ -1,13 +1,14 @@
 {{!-- header for unauthorised users --}}
 
-
 {{!-- login for for the user --}}
 <section class="login-page">
   <div class="text-center">
     <form class="form-signin" method="post" action="/login">
+      {{!-- logo image leading to the landing page --}}
       <a href="/">
         <img class="mb-4" src="./images/woodpecker.png" alt="" width="72" height="72">
       </a>
+      {{!-- login message --}}
       <h1 class="h3 mb-3 font-weight-normal">Please login:</h1>
       <label for="inputEmail" class="sr-only"></label>
 
@@ -27,21 +28,11 @@
 
       <button class="btn btn-lg btn-danger btn-block" type="submit">Login</button>
     </form>
-    <p>or</p>
-    <div class="social-login">
-      <div class="input-group has-validation">
-        <span class="input-group-text"><img src="./images/google.png" alt="" width="30" height="30"></span>
-        <button href="/auth/google" class="btn btn-lg btn-danger btn-block" type="submit">Login with Google</button>
-      </div>
-    </div>
-  </div>
-
-</section>
-
+    
 {{#if error}}
-
- <p class="error">Message: {{error}}</p>
-
+  <p class="alert alert-danger">{{error}}</p>
 {{/if}}
+  </div>
+</section>
 
 <!-- footer for unauthorised users -->

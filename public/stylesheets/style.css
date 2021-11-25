@@ -3,6 +3,10 @@ GREY = rgb(36, 35, 35)
 WHITE = ghostwhite */
 
 /* Hugo's styles */
+.user-form {
+  width: 400px;
+}
+
 .social-login{
   margin-top: 0;
 }
@@ -132,7 +136,7 @@ h1 {
 }
 
 .text-center button {
-  width: 300px;
+  width: 500px;
   justify-self: center;
 }
 
