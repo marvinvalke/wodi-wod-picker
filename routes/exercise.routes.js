@@ -12,14 +12,14 @@ const errorHandling = require("../error-handling");
 router.get("/exercise", (req, res, next) => {
   const { search } = req.query;
   if (search) {
-      Exercise.find({ $text: { $search: search } })
-        .then((searchedExercises) => {
-          console.log('console logged this' , searchedExercises)
-          res.render("exercise/exercises-list.hbs", { searchedExercises });
-        })
-        .catch((err) => {
-          next(err);
-        });
+    Exercise.find({ $text: { $search: search } })
+      .then((searchedExercises) => {
+        console.log("console logged this", searchedExercises);
+        res.render("exercise/exercises-list.hbs", { searchedExercises });
+      })
+      .catch((err) => {
+        next(err);
+      });
   } else {
     Exercise.find()
       .then((allExercises) => {

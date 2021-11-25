@@ -37,7 +37,6 @@ WHITE = ghostwhite */
 /* --------------------------------------------GLOBAL STYLES-------------------------------------------  */
 body {
 font-family: 'Lora', serif;
-padding: 10px;
 background-color: rgb(36, 35, 35);
 background-repeat: no-repeat;
 background-size: cover;
@@ -117,6 +116,7 @@ h1 {
   background-image: linear-gradient(rgba(0, 0, 0, 0.750),rgba(0, 0, 0, 0.750)) ,url(/images/manRope.jpg);
   background-size:cover;
   background-repeat: no-repeat;
+  padding: 10px;
 }
 
 .text-center {
@@ -139,6 +139,7 @@ h1 {
   background-image: linear-gradient(rgba(0, 0, 0, 0.750),rgba(0, 0, 0, 0.750)) ,url(/images/womanDumbbell.jpg);
   background-size:cover;
   background-repeat: no-repeat;
+  padding: 10px;
 }
 
 
@@ -150,6 +151,7 @@ h1 {
   background-image: linear-gradient(rgba(0, 0, 0, 0.750),rgba(0, 0, 0, 0.750)) ,url(/images/manSnatch.jpg);
   background-size:cover;
   background-repeat: no-repeat;
+  padding: 10px;
 }
 
 
@@ -166,6 +168,7 @@ h1 {
   align-content: center;
   flex-direction: column;
   align-items: stretch;
+  padding: 10px;
 }
 
 .wod-container {
@@ -222,6 +225,7 @@ h1 {
   background-image: linear-gradient(rgba(0, 0, 0, 0.750),rgba(0, 0, 0, 0.750)) ,url(/images/crossfit1920.jpg);
   background-size:cover;
   background-repeat: no-repeat;
+  padding: 10px;
 }
 
 
@@ -289,7 +293,7 @@ flex-wrap: nowrap;
 .wod-form-section {
   height: 800px;
   margin: 0;
-  padding: 8px;
+  padding: 10px;
   background-image: linear-gradient(rgba(0, 0, 0, 0.750),rgba(0, 0, 0, 0.750)) ,url(/images/fitness137.jpg);
   background-size:cover;
   background-repeat: no-repeat;
@@ -334,10 +338,11 @@ flex-wrap: nowrap;
 
 #exercises-list-section {
   background-color: rgb(36, 35, 35);
+  padding: 10px;
 }
 
 .exercises-list img {
-  width: 150px;
+  width: 250px;
   border-radius: 20px;
   margin: 15px;
 }
@@ -347,6 +352,11 @@ flex-wrap: nowrap;
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
+}
+
+.all-exercises-title {
+  text-align: center;
+  margin-top: 10px;
 }
 
 .searched-exercises img{
@@ -399,13 +409,74 @@ flex-wrap: nowrap;
   margin: 0;
 }
 
+.slideshow-container {
+  max-height: 620px;
+  position: relative;
+
+}
+
+.mySlides {
+  display: none;
+  text-align: center;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 120s;
+  animation-name: fade;
+  animation-duration: 120s;
+} 
+
+@-webkit-keyframes fade {
+  from {opacity: 1}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: 1}
+  to {opacity: 1}
+}
+
+.searched-exercise-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+
 /* --------------------------------------------EXERCISE DETAILS-------------------------------------------  */
 
 #exercise-details-section {
   height: 620px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.750),rgba(0, 0, 0, 0.750)), url(/images/crossfit-gf7c7be81d_1920.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.750),rgba(0, 0, 0, 0.750)), url(/images/crossfit1920.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  padding: 10px;
 }
 
 .exercise-title-img {
@@ -443,4 +514,24 @@ flex-wrap: nowrap;
 }
 
 
+/* --------------------------------------------ERROR PAGES-------------------------------------------  */
 
+.error{
+  height: 620px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.750),rgba(0, 0, 0, 0.750)), url(/images/arnold.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 10px;
+}
+
+.error-challenge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.error-go-back {
+  margin-top: 200px;
+}
