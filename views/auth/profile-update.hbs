@@ -1,28 +1,10 @@
-<!-- navbar for logged in users-->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <a class="navbar-brand" href="/welcome">
-      Wod[i]Wodpicker
-    </a>
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="/wod">Your WODs</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/wod/create">Create one</a>
-      </li>
-    </ul>
-
-  </div>
-  <span class="navbar-text">
-    <a href="/profile">Profile</a> | <a href="/logout">Logout</a>
-  </span>
-</nav>
+<!-- navbar for authorised users-->
 
 <!-- labels are being used only for spacing purposes between elements-->
 <label for=""></label><br>
 <label for=""></label><br>
 
+{{!-- Update your profile form --}}
 <h2>Update your profile </h2>
 <form action="edit" method="POST" action="/profile/edit">
   <div class="text-center">
@@ -71,5 +53,4 @@
 <label for=""></label><br>
 <label for=""></label><br>
 
-<!-- //the footer is the same in every single page -->
-<!-- OK MOVED TO LAYOUT THEN -->
+<!-- footer for authorised users -->
