@@ -17,7 +17,7 @@ WHITE = ghostwhite
 }
 
 .timer-section {
-  height: 650px;
+  height: 750px;
   background-image: linear-gradient(rgba(0, 0, 0, 0.750),rgba(0, 0, 0, 0.750)), url(../images/gym.jpg);
   background-repeat: no-repeat;
   background-size: cover;
