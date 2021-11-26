@@ -27,7 +27,12 @@ WHITE = ghostwhite */
 }
 
 .card-body {
-  color: black;
+  color: white;
+}
+
+.card {
+  background-color: rgb(36, 35, 35);
+  color: white;
 }
 
 #welcome-bg {
@@ -36,6 +41,8 @@ WHITE = ghostwhite */
   background-size:cover;
   background-repeat: no-repeat;
 }
+
+
 
 /* --------------------------------------------GLOBAL STYLES-------------------------------------------  */
 body {
@@ -110,6 +117,10 @@ h1 {
   background-color: black;
   border: none;
   border: 1px solid rgb(141, 0, 0);
+}
+
+.btn-warning{
+  color: white;
 }
 
 

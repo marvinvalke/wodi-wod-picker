@@ -1,84 +1,63 @@
 <!-- navbar for authorised users-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <a class="navbar-brand" href="/welcome">
+      Wod[i]Wodpicker
+    </a>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/wod">Your WODs</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/wod/create">Create one</a>
+      </li>
+    </ul>
+
+  </div>
+  <span class="navbar-text">
+    <a href="/profile">Profile</a> | <a href="/logout">Logout</a>
+  </span>
+</nav>
 
 <!-- labels are being used only for spacing purposes between elements-->
-<label for=""></label><br>
-<label for=""></label><br>
-{{!-- update your profile information --}}>
-<div class="text-center">
-    <form class="form-signin" method="POST" action="/register">
-      <a href="/">
-        <img class="mb-4" src="./images/woodpecker.png" alt="" width="72" height="72">
-      </a>
-      <h1 class="h3 mb-3 font-weight-normal">Update your profile:</h1>
-
-      <div class="input-group has-validation">
-        <span class="input-group-text"><img src="./images/id-card.png" alt="" width="30" height="30"></span>
-        <input type="name" id="inputName" class="form-control" name="name" placeholder="Name" required="" autofocus="">
-      </div>
-      <label for="inputName" class="sr-only"></label>
-
-      <div class="input-group has-validation">
-        <span class="input-group-text"><img src="./images/arroba.png" alt="" width="30" height="30"></span>
-        <input type="email" id="inputEmail" class="form-control" name="email" placeholder="you@example.com" required=""
-          autofocus="">
-      </div>
-      <label for="inputEmail" class="sr-only"></label>
-
-      <div class="input-group has-validation">
-        <span class="input-group-text"><img src="./images/password.png" alt="" width="30" height="30"></span>
-        <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Password"
-          required="">
-      </div>
-
-      <label for="inputPassword" class="sr-only"></label><br>
-      
-      <button class="btn btn-lg btn-danger btn-block" type="submit">Register</button>
-    </form>
-  </div>
-
-
 {{!-- Update your profile form --}}
 <section class="login-page">
-  <h2>Update your profile </h2>
+  <label for=""></label><br>
+  <label for=""></label><br>
+  
+  
 <form action="edit" method="POST" action="/profile/edit">
   <div class="text-center">
-  
-    <a href="/">
-      <img class="mb-4" src="./images/woodpecker.png" alt="" width="72" height="72">
-    </a>
+  <h2>Update your profile </h2>
+    <div class="surrounded">
+      <img src="./images/daenerys.jpeg" width="150" height="150" alt="..." class="img-thumbnail">
+    </div>
 
-     <div class="input-group has-validation">
+    <div class="input-group has-validation">
       <span class="input-group-text"><img src="./images/id-card.png" alt="" width="30" height="30"></span>
       <input type="name" id="inputName" class="form-control" name="name" placeholder="Name" required="" autofocus="" value="{{profile.name}}">
     </div>
-    <label for="" class="sr-only"></label>
 
     <div class="input-group has-validation">
       <span class="input-group-text"><img src="./images/arroba.png" alt="" width="30" height="30"></span>
       <input type="email" id="inputEmail" class="form-control" name="email" placeholder="you@example.com" required="" autofocus="" value="{{profile.email}}">
     </div>
-    <label for="inputEmail" class="sr-only"></label>
 
     <div class="input-group has-validation">
       <span class="input-group-text"><img src="./images/password.png" alt="" width="30" height="30"></span>
       <input type="password" id="inputPassword" class="form-control" name="password" placeholder="New password" required="">
     </div>
-    <label for="inputPassword" class="sr-only"></label>
-
-    <div class="input-group has-validation">
-      <span class="input-group-text"><img src="./images/password.png" alt="" width="30" height="30"></span>
-      <input type="password" id="inputPassword" class="form-control" placeholder="Confirm your new password" required="">
-    </div>
-    <label for="inputPassword" class="sr-only"></label>
+    <button class="btn btn-danger" type="submit">Submit!</button>
+  <label for=""></label><br>
+  <label for=""></label><br>
   
 </div>
-
-  <button class="btn btn-primary" type="submit">Submit!</button>
 </form>
 
 <label for=""></label><br>
 <label for=""></label><br>
 </section>
+
 
 
 <!-- footer for authorised users -->
