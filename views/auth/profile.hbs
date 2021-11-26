@@ -21,35 +21,34 @@
 
 <!-- my profile card -->
 <section id="welcome-bg">
-<label for=""></label><br>
-<label for=""></label><br>
+  <label for=""></label><br>
+  <label for=""></label><br>
 
   <div class="surrounded">
-  <div class="card text-center">
-    <label for=""></label><br>
-    <label for=""></label><br>
-    <label for=""></label><br>
-    <label for=""></label><br>
-    <div class="surrounded">
-      <img src="{{profile.profilePic}}" width="150" height="150" alt="..." class="img-thumbnail">
-    </div>
-    <form action="/upload" method="POST" enctype="multipart/form-data">
+    <div class="card text-center">
+      <label for=""></label><br>
+
+      <div class="surrounded">
+        <img src="{{profile.profilePic}}" width="150" height="150" alt="ADD YOUR PICTURE" class="img-thumbnail">
+      </div>
+      <form class="form-profile" action="/upload" method="POST" enctype="multipart/form-data">
         <label for="image"> Add your image!</label>
-        <input type="file" name="image" accept="image/png image/jpg" />
-        <button type="submit">Add Pic</button>
+        <hr>
+        <input class="input-profile" type="file" name="image" accept="image/png image/jpg" />
+        <button class="create-btn" type="submit">Add Pic</button>
       </form>
-    <div class="card-body">
-      <h5 class="card-title">{{profile.name}}</h5>
-      <p class="card-text">{{profile.email}}</p>
-      <form method="GET" action="/profile/edit">
-            <button class="card-link btn btn-warning" type="submit">Edit my information</button>
-      </form>
-      <form method="POST" action="/profile/delete">
-            <button class="card-link btn btn-danger" type="submit">Delete my account</button>
-      </form>
+      <div class="card-body">
+        <h5 class="card-title">{{profile.name}}</h5>
+        <p class="card-text">{{profile.email}}</p>
+        <form method="GET" action="/profile/edit">
+          <button class="card-link btn btn-warning" type="submit">Edit my information</button>
+        </form>
+        <form method="POST" action="/profile/delete">
+          <button class="card-link btn btn-danger" type="submit">Delete my account</button>
+        </form>
+      </div>
     </div>
   </div>
-</div>
 </section>
 
 <!-- footer for authorised users -->

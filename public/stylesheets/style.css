@@ -290,7 +290,7 @@ margin-bottom: 30px;
 
 .text-center {
   text-align: center!important;
-  height: 500px;
+  height: 550px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -328,6 +328,23 @@ margin-bottom: 30px;
 
 .google-img {
   width:30px
+}
+
+.form-profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-profile {
+  background-color: rgb(141, 0, 0);
+  color: ghostwhite;
+}
+
+.udpate-profile-img {
+  margin: 20px;
+  border: 1px solid rgb(141, 0, 0);
 }
 
 /* --------------------------------------------WELCOME PAGE-------------------------------------------  */

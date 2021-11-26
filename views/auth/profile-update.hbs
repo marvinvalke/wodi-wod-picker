@@ -22,40 +22,46 @@
 <!-- labels are being used only for spacing purposes between elements-->
 {{!-- Update your profile form --}}
 <section class="login-page">
+  <div class="text-center-register">
+
+    <form class="form-register" action="edit" method="POST" action="/profile/edit">
+      <h2>Update your profile </h2>
+      <div class="surrounded">
+        <hr>
+        <img class="udpate-profile-img" src="/images/daenerys.jpeg" width="150" height="150" alt="..."
+          class="img-thumbnail">
+
+      </div>
+
+      <div class="has-validation">
+        <span class="input-group-text"><img src="/images/id-card.png" alt="" width="30" height="30"></span>
+        <input type="name" id="inputName" class="form-control" name="name" placeholder="Name" required="" autofocus=""
+          value="{{profile.name}}">
+      </div>
+
+      <div class="has-validation">
+        <span class="input-group-text"><img src="/images/arroba.png" alt="" width="30" height="30"></span>
+        <input type="email" id="inputEmail" class="form-control" name="email" placeholder="you@example.com" required=""
+          autofocus="" value="{{profile.email}}">
+      </div>
+
+      <div class="has-validation">
+        <span class="input-group-text"><img src="/images/password.png" alt="" width="30" height="30"></span>
+        <input type="password" id="inputPassword" class="form-control" name="password" placeholder="New password"
+          required="">
+      </div>
+      <label for=""></label><br>
+      <label for=""></label><br>
+      <button class="btn btn-danger" type="submit">Submit!</button>
+      <label for=""></label><br>
+      <label for=""></label><br>
+
+  </div>
+  </form>
+
   <label for=""></label><br>
   <label for=""></label><br>
-  
-  
-<form action="edit" method="POST" action="/profile/edit">
-  <div class="text-center">
-  <h2>Update your profile </h2>
-    <div class="surrounded">
-      <img src="./images/daenerys.jpeg" width="150" height="150" alt="..." class="img-thumbnail">
-    </div>
-
-    <div class="input-group has-validation">
-      <span class="input-group-text"><img src="./images/id-card.png" alt="" width="30" height="30"></span>
-      <input type="name" id="inputName" class="form-control" name="name" placeholder="Name" required="" autofocus="" value="{{profile.name}}">
-    </div>
-
-    <div class="input-group has-validation">
-      <span class="input-group-text"><img src="./images/arroba.png" alt="" width="30" height="30"></span>
-      <input type="email" id="inputEmail" class="form-control" name="email" placeholder="you@example.com" required="" autofocus="" value="{{profile.email}}">
-    </div>
-
-    <div class="input-group has-validation">
-      <span class="input-group-text"><img src="./images/password.png" alt="" width="30" height="30"></span>
-      <input type="password" id="inputPassword" class="form-control" name="password" placeholder="New password" required="">
-    </div>
-    <button class="btn btn-danger" type="submit">Submit!</button>
-  <label for=""></label><br>
-  <label for=""></label><br>
-  
-</div>
-</form>
-
-<label for=""></label><br>
-<label for=""></label><br>
+  </div>
 </section>
 
 
