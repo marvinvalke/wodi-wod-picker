@@ -131,7 +131,7 @@ h1 {
 /* --------------------------------------------LANDING PAGE-------------------------------------------  */
 
 .landing-page {
-  height: 680px;
+  height: 750px;
   background-image: linear-gradient(rgba(0, 0, 0, 0.750),rgba(0, 0, 0, 0.750)) ,url(/images/manRope.jpg);
   background-size:cover;
   background-repeat: no-repeat;
@@ -198,7 +198,7 @@ margin-bottom: 30px;
 
 /* --------------------------------------------LOGIN PAGE-------------------------------------------  */
 .login-page {
-  height: 680px;
+  height: 750px;
   background-image: linear-gradient(rgba(0, 0, 0, 0.750),rgba(0, 0, 0, 0.750)) ,url(/images/womanDumbbell.jpg);
   background-size:cover;
   background-repeat: no-repeat;
@@ -238,7 +238,7 @@ margin-bottom: 30px;
 
 
 .register-page {
-  height: 680px;
+  height: 750px;
   background-image: linear-gradient(rgba(0, 0, 0, 0.750),rgba(0, 0, 0, 0.750)) ,url(/images/manSnatch.jpg);
   background-size:cover;
   background-repeat: no-repeat;
@@ -261,7 +261,7 @@ margin-bottom: 30px;
 /* --------------------------------------------PROFILE PAGE-------------------------------------------  */
 
 .profile-section {
-  height: 680px;
+  height: 750px;
   background-image: linear-gradient(rgba(0, 0, 0, 0.750),rgba(0, 0, 0, 0.750)) ,url(/images/bg.jpeg);
   background-size:cover;
   background-repeat: no-repeat;
@@ -380,7 +380,7 @@ margin-bottom: 30px;
 /* --------------------------------------------WOD LIST-------------------------------------------  */
 
 #wod-list-section {
-  height: 680px;
+  height: 750px;
   background-image: linear-gradient(rgba(0, 0, 0, 0.750),rgba(0, 0, 0, 0.750)) ,url(/images/kettlebell.png);
   background-size:cover;
   background-repeat: no-repeat;
@@ -442,7 +442,7 @@ margin-bottom: 30px;
 /* --------------------------------------------WOD DEATILS-------------------------------------------  */
 
 .wod-detail-section {
-  height: 680px;
+  height: 750px;
   background-image: linear-gradient(rgba(0, 0, 0, 0.750),rgba(0, 0, 0, 0.750)) ,url(/images/crossfit1920.png);
   background-size:cover;
   background-repeat: no-repeat;
@@ -694,7 +694,7 @@ flex-wrap: nowrap;
 /* --------------------------------------------EXERCISE DETAILS-------------------------------------------  */
 
 #exercise-details-section {
-  height: 680px;
+  height: 750px;
   background-image: linear-gradient(rgba(0, 0, 0, 0.750),rgba(0, 0, 0, 0.750)), url(/images/crossfit1920.png);
   background-repeat: no-repeat;
   background-size: cover;
@@ -740,7 +740,7 @@ flex-wrap: nowrap;
 /* --------------------------------------------ERROR PAGES-------------------------------------------  */
 
 .error{
-  height: 680px;
+  height: 750px;
   background-image: linear-gradient(rgba(0, 0, 0, 0.750),rgba(0, 0, 0, 0.750)), url(/images/arnold.jpg);
   background-repeat: no-repeat;
   background-size: cover;
