@@ -106,7 +106,7 @@ h1 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   text-transform: uppercase;
-  margin: 15px;
+  margin-left: 15px;
   margin-bottom: 30px;
 }
 
@@ -140,6 +140,10 @@ h1 {
   padding: 10px;
 }
 
+.landing-page > div {
+  text-align: center;
+}
+
 .text-center {
   text-align: center!important;
   height: 600px;
@@ -154,6 +158,46 @@ h1 {
   justify-self: center;
 }
 
+
+.main-header { 
+  color: ghostwhite;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 150px;
+  font-weight: bold;
+  letter-spacing: -20px;
+  line-height: 0.7;
+  text-align: start;
+  width: 800px;
+  margin-left: 140px;
+  margin-top: 50px;
+}
+
+.h2-box {
+display: flex;
+flex-direction: column;
+padding-left: 140px;
+margin-bottom: 30px;
+}
+
+.main-h2 { 
+  color: ghostwhite;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 24px;
+  text-align: start;
+}
+
+
+.main-p { 
+  color: ghostwhite; 
+  font-size: 14px; line-height: 24px; margin: 0 0 24px; 
+  text-align: justify; 
+  text-justify: inter-word; 
+  width: 540px;
+}
+
+
+
+
 /* --------------------------------------------LOGIN PAGE-------------------------------------------  */
 .login-page {
   height: 680px;
@@ -162,6 +206,34 @@ h1 {
   background-repeat: no-repeat;
   padding: 10px;
 }
+
+.login-page p {
+  margin-top: 15px;
+}
+
+.login-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 100px;
+}
+
+.form-signin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.has-validation {
+  width: 400px;
+  display: flex;
+  justify-content: space-around;
+}
+
+
+
 
 
 /* -----------------------------------------REGISTER PAGE-------------------------------------------  */
@@ -175,7 +247,120 @@ h1 {
   padding: 10px;
 }
 
+.form-register {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
 
+.social-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* --------------------------------------------PROFILE PAGE-------------------------------------------  */
+
+.profile-section {
+  height: 680px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.750),rgba(0, 0, 0, 0.750)) ,url(/images/bg.jpeg);
+  background-size:cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 10px;
+}
+
+.card-link {
+  background-color: black;
+  border: 1px solid rgb(141, 0, 0);
+  color: ghostwhite;
+  margin-bottom: 10px;
+  padding: 10px;
+  align-self: flex-end;
+}
+
+.card-link:hover {
+  background-color: ghostwhite;
+  border: 1px solid black;
+  color: black;
+}
+
+.text-center {
+  text-align: center!important;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: rgb(141, 0, 0, 0.8);
+  padding: 10px , 0px;
+}
+
+.input-group-login {
+  background-color: rgb(141, 0, 0, 0.8);
+  width: 600px;
+  display: flex;
+  justify-content: space-around;
+  margin: 10px,0px;
+}
+
+.btn-lg {
+  margin-top: 15px;
+}
+
+.btn-block {
+  width: 400px;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+}
+
+.btn-block span {
+  font-size: 1.2em;
+  letter-spacing: 2px;
+}
+
+.google-img {
+  width:30px
+}
+
+/* --------------------------------------------WELCOME PAGE-------------------------------------------  */
+
+
+.welcome-text-center {
+  text-align: center!important;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.input-group {
+  font-size: 1.2em;
+  background-color: rgb(141, 0, 0, 0.8);
+  width: 600px;
+  display: flex;
+  justify-content: space-around;
+  -webkit-box-shadow: 0px 3px 10px 4px #ffffff; 
+  box-shadow: 0px 3px 10px 4px #ffffff;
+}
+
+.input-group a {
+  padding: 10px;
+}
+
+.input-group a:hover{
+  color:black
+}
 
 /* --------------------------------------------WOD LIST-------------------------------------------  */
 

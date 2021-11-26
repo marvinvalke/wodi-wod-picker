@@ -21,6 +21,11 @@ WHITE = ghostwhite
   background-image: linear-gradient(rgba(0, 0, 0, 0.750),rgba(0, 0, 0, 0.750)), url(../images/gym.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  margin: 0px;
+}
+
+.timer-section > h1 {
+  padding-top: 10px;
 }
 
 .timer-section img{

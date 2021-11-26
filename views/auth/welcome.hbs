@@ -21,22 +21,20 @@
 
 {{!-- greeting the authorised user --}}
 <section id="welcome-bg">
-{{!-- greeting message, calling the user by the name and asking about the mood/motivation --}}
-<div class="text-center">
-  <h1>Welcome, {{profile.name}}!</h1>
-  <h3>How are you feeling today?</h3>
+  {{!-- greeting message, calling the user by the name and asking about the mood/motivation --}}
+  <div class="welcome-text-center">
+    <h1>Welcome, {{profile.name}}!</h1>
+    <h3>How are you feeling today?</h3>
 
 
-  <div class="input-group mb-3 surrounded">
-    <button class="btn btn-danger" type="button">Bring it on!</button>
-    <button class="btn btn-danger" type="button">Take it easy...</button>
-    <button class="btn btn-danger" type="button">Not sure</button>
+    <div class="input-group mb-3 surrounded">
+      <a href="/wod">Bring it on!</a>
+      <a href="/wod/create">Take it easy...</a>
+      <a href="/exercise"> Not sure </a>
+    </div>
   </div>
-</div>
-<label for=""></label><br>
-<label for=""></label><br>
+  <label for=""></label><br>
+  <label for=""></label><br>
 </section>
 
 <!-- footer -->
-
-
