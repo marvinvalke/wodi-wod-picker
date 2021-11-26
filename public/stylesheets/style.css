@@ -120,11 +120,6 @@ h1 {
 }
 
 .landing-page > div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-  height: 600px;
   text-align: center;
 }
 
@@ -144,6 +139,46 @@ h1 {
   justify-self: center;
 }
 
+
+.main-header { 
+  color: ghostwhite;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 150px;
+  font-weight: bold;
+  letter-spacing: -20px;
+  line-height: 0.7;
+  text-align: start;
+  width: 800px;
+  margin-left: 140px;
+  margin-top: 50px;
+}
+
+.h2-box {
+display: flex;
+flex-direction: column;
+padding-left: 140px;
+margin-bottom: 30px;
+}
+
+.main-h2 { 
+  color: ghostwhite;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 24px;
+  text-align: start;
+}
+
+
+.main-p { 
+  color: ghostwhite; 
+  font-size: 14px; line-height: 24px; margin: 0 0 24px; 
+  text-align: justify; 
+  text-justify: inter-word; 
+  width: 540px;
+}
+
+
+
+
 /* --------------------------------------------LOGIN PAGE-------------------------------------------  */
 .login-page {
   height: 680px;
@@ -162,7 +197,7 @@ h1 {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 80px;
+  margin-top: 100px;
 }
 
 .form-signin {
@@ -170,6 +205,13 @@ h1 {
   flex-direction: column;
   align-items: center;
 }
+
+.has-validation {
+  width: 400px;
+  display: flex;
+  justify-content: space-around;
+}
+
 
 
 
@@ -185,6 +227,18 @@ h1 {
   padding: 10px;
 }
 
+.form-register {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.social-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 /* --------------------------------------------PROFILE PAGE-------------------------------------------  */
 
@@ -240,7 +294,7 @@ h1 {
 }
 
 .btn-block {
-  width: 300px;
+  width: 400px;
   font-size: 0.9rem;
   letter-spacing: 1px;
   display: flex;
