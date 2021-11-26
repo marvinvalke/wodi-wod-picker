@@ -13,7 +13,8 @@ const UserSchema = new Schema(
     },
     password: {
       type: String,
-    }
+    },
+    profilePic: String,
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`
