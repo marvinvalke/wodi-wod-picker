@@ -34,10 +34,10 @@
       <img src="{{profile.profilePic}}" width="150" height="150" alt="..." class="img-thumbnail">
     </div>
     <form action="/upload" method="POST" enctype="multipart/form-data">
-        <label for="image"> Add your image!</label>
-        <input type="file" name="image" accept="image/png image/jpg" />
-        <button type="submit">Add Pic</button>
-      </form>
+        <label for="image">Select the photo:</label>
+        <input type="file" name="image" accept="image/png image/jpg" /><br>
+        <button type="submit" class="btn btn-secondary active btn-sm">Change!</button>
+    </form>
     <div class="card-body">
       <h5 class="card-title">{{profile.name}}</h5>
       <p class="card-text">{{profile.email}}</p>

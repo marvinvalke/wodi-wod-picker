@@ -3,6 +3,9 @@ GREY = rgb(36, 35, 35)
 WHITE = ghostwhite */
 
 /* Hugo's styles */
+.btn-sm {
+  width: 50px;
+}
 .user-form {
   width: 400px;
 }
