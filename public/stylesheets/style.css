@@ -58,6 +58,7 @@ padding: 0px;
 
 
 .navbar {
+  height: 55px;
   padding: 5px 15px 5px 15px;
   position: relative;
   display: flex;
