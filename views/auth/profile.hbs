@@ -21,26 +21,34 @@
 
 <!-- my profile card -->
 <section id="welcome-bg">
+
+<label for=""></label><br>
 <label for=""></label><br>
 <label for=""></label><br>
 
-  <div class="surrounded">
+<div class="surrounded">
   <div class="card text-center">
     <label for=""></label><br>
     <label for=""></label><br>
-    <label for=""></label><br>
-    <label for=""></label><br>
+    
     <div class="surrounded">
       <img src="{{profile.profilePic}}" width="150" height="150" alt="..." class="img-thumbnail">
     </div>
-    <form action="/upload" method="POST" enctype="multipart/form-data">
-        <label for="image">Select the photo:</label>
+    <label for=""></label><br>
+
+      {{!-- change profile photo --}}
+      <form class="change" action="/upload" method="POST" enctype="multipart/form-data">
+        <label for="image">Change photo:</label>
         <input type="file" name="image" accept="image/png image/jpg" /><br>
-        <button type="submit" class="btn btn-secondary active btn-sm">Change!</button>
-    </form>
+        <button type="submit" class="card-link btn btn-warning">Upload photo</button>
+      </form>
+      
+
     <div class="card-body">
       <h5 class="card-title">{{profile.name}}</h5>
       <p class="card-text">{{profile.email}}</p>
+      
+  
       <form method="GET" action="/profile/edit">
             <button class="card-link btn btn-warning" type="submit">Edit my information</button>
       </form>
@@ -50,6 +58,7 @@
     </div>
   </div>
 </div>
+
 </section>
 
 <!-- footer for authorised users -->

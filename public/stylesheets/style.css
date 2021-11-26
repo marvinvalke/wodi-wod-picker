@@ -6,6 +6,11 @@ WHITE = ghostwhite */
 .btn-sm {
   width: 50px;
 }
+
+.btn-update {
+  width: 605px;
+}
+
 .user-form {
   width: 400px;
 }
