@@ -7,6 +7,9 @@ const UserModel = require("../models/User.model");
 // IMPORT BCRYPT
 const bcrypt = require("bcryptjs");
 
+//IMPORT CLOUDINARY
+const uploader = require('../middlewares/cloudinary.config.js');
+
 //---------------------------------------ROUTES------------------------------------
 
 //-----------------REGISTER--------------------
@@ -57,15 +60,11 @@ UserModel.find({email})
         req.session.myProperty = userObj;
         res.redirect("/welcome");
       } else {
-        res.render("auth/login.hbs", {
-          error: "Your password is incorrect"
-        })
+        res.render('auth/login.hbs', {error: "Login failed: the password you entered is incorrect."})
         return;
       }
     } else {
-      res.render("auth/login.hbs", {
-        error: "Email does not exist"
-      })
+      res.render("auth/login.hbs", {error: "Login failed: email does not exist."})
       return;
     }
   })
@@ -155,28 +154,21 @@ router.post('/profile/delete', (req, res, next) => {
     })
 });
 
-// //Cloudinary
-// router.post('/upload-pic', uploader.single("imageUrl"), (req, res, next) => {
-//   // the uploader.single() callback will send the file to cloudinary and get you and obj with the url in return
+// -------------- CLOUDINARY ----------------
+router.post('/upload', isLoggedIn, uploader.single("image"), (req, res, next) => {
+  console.log('file is: ', req.file)
+  UserModel.findByIdAndUpdate(req.session.myProperty._id, {
+    profilePic: req.file.path,
+  })
+  .then(()=>{
+    res.redirect("/profile")
+  })
+  .catch(()=>{
+    next(err)
+  })
+});
 
-//   if (!req.file) {
-    
-//         return ;
-//   }
-//   UserModel.findByIdAndUpdate(req.session.myProperty._id, { image:req.file.path})
-//     .then ((user)=>{
-//         res.redirect('/profile')
-//     })
-//     .catch((err)=>{
-//         next(err)
-//     })
-//   // You will get the image url in 'req.file.path'
-//   // Your code to store your url in your database should be here
-// })
-
-/* <img src="{{user.image}}" alt="profile pic"></img> */
-
-//---------- GOOGLE AUTH ROUTES --------------
+//---------- GOOGLE AUTHENTICATION --------------
 // routes/auth-routes.js
 const passport = require("passport")
 

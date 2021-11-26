@@ -1,56 +1,63 @@
 <!-- navbar for authorised users-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <a class="navbar-brand" href="/welcome">
+      Wod[i]Wodpicker
+    </a>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/wod">Your WODs</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/wod/create">Create one</a>
+      </li>
+    </ul>
+
+  </div>
+  <span class="navbar-text">
+    <a href="/profile">Profile</a> | <a href="/logout">Logout</a>
+  </span>
+</nav>
 
 <!-- labels are being used only for spacing purposes between elements-->
-<label for=""></label><br>
-<label for=""></label><br>
-
 {{!-- Update your profile form --}}
-<h2>Update your profile </h2>
+<section class="login-page">
+  <label for=""></label><br>
+  <label for=""></label><br>
+  
+  
 <form action="edit" method="POST" action="/profile/edit">
   <div class="text-center">
-  
-    <a href="/">
-      <img class="mb-4" src="./images/woodpecker.png" alt="" width="72" height="72">
-    </a>
+  <h2>Update your profile </h2>
+    <div class="surrounded">
+      <img src="./images/daenerys.jpeg" width="150" height="150" alt="..." class="img-thumbnail">
+    </div>
 
-     <div class="input-group has-validation">
+    <div class="input-group has-validation">
       <span class="input-group-text"><img src="./images/id-card.png" alt="" width="30" height="30"></span>
       <input type="name" id="inputName" class="form-control" name="name" placeholder="Name" required="" autofocus="" value="{{profile.name}}">
     </div>
-    <label for="" class="sr-only"></label>
 
     <div class="input-group has-validation">
       <span class="input-group-text"><img src="./images/arroba.png" alt="" width="30" height="30"></span>
       <input type="email" id="inputEmail" class="form-control" name="email" placeholder="you@example.com" required="" autofocus="" value="{{profile.email}}">
     </div>
-    <label for="inputEmail" class="sr-only"></label>
 
     <div class="input-group has-validation">
       <span class="input-group-text"><img src="./images/password.png" alt="" width="30" height="30"></span>
       <input type="password" id="inputPassword" class="form-control" name="password" placeholder="New password" required="">
     </div>
-    <label for="inputPassword" class="sr-only"></label>
-
-    <div class="input-group has-validation">
-      <span class="input-group-text"><img src="./images/password.png" alt="" width="30" height="30"></span>
-      <input type="password" id="inputPassword" class="form-control" placeholder="Confirm your new password" required="">
-    </div>
-    <label for="inputPassword" class="sr-only"></label>
-
-
-    <div class="checkbox mb-3">
-      <label>
-        Are you a Personal Trainer?
-        <input type="checkbox" value="PT">
-      </label>
-    </div>
+    <button class="btn btn-danger" type="submit">Submit!</button>
+  <label for=""></label><br>
+  <label for=""></label><br>
   
 </div>
-
-  <button class="btn btn-primary" type="submit">Submit!</button>
 </form>
 
 <label for=""></label><br>
 <label for=""></label><br>
+</section>
+
+
 
 <!-- footer for authorised users -->
