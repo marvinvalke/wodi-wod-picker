@@ -1,5 +1,5 @@
 {{!-- header for authorised users --}}
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="collapse navbar-collapse" id="navbarNav">
     <a class="navbar-brand" href="/welcome">
       Wod[i]Wodpicker
@@ -17,22 +17,22 @@
   <span class="navbar-text">
     <a href="/profile">Profile</a> | <a href="/logout">Logout</a>
   </span>
-  </nav>
+  </nav> -->
 
 <section id="exercise-details-section">
-    <h1>{{theExercise.name}} DETAILS</h1>
-    <div class="exercice-detail">
-        <img src="{{theExercise.gifUrl}}" alt="">
-        <ul>
-            <li>Body Part<span>-</span> <span>{{theExercise.bodyPart}}</span></li>
-            <br>
-            <li>Muscles<span>-</span><span>{{theExercise.target}}</span></li>
-            <br>
-            <li>Equipment<span>-</span><span>{{theExercise.equipment}}</span></li>
-        </ul>
-    </div>
-    <h6 class="go-back">
-        <a href="javascript:history.back()">
-            <- GO BACK</a>
-    </h6>
+  <h1>{{theExercise.name}} DETAILS</h1>
+  <div class="exercice-detail">
+    <img src="{{theExercise.gifUrl}}" alt="">
+    <ul>
+      <li>Body Part<span>-</span> <span>{{theExercise.bodyPart}}</span></li>
+      <br>
+      <li>Muscles<span>-</span><span>{{theExercise.target}}</span></li>
+      <br>
+      <li>Equipment<span>-</span><span>{{theExercise.equipment}}</span></li>
+    </ul>
+  </div>
+  <h6 class="go-back">
+    <a href="javascript:history.back()">
+      <- GO BACK</a>
+  </h6>
 </section>
