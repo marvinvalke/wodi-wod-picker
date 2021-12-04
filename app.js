@@ -51,53 +51,53 @@ app.use(session({
   })
 }));
 
-//GOOGLE AUTH
-//---------------REQUIRE---------------
-const passport = require("passport");
-const GoogleStrategy = require("passport-google-oauth20").Strategy;
-const UserModel = require("./models/User.model.js");
+// //GOOGLE AUTH
+// //---------------REQUIRE---------------
+// const passport = require("passport");
+// const GoogleStrategy = require("passport-google-oauth20").Strategy;
+// const UserModel = require("./models/User.model.js");
 
 //---------------SERIALISE--------------
-app.use(passport.initialize());
-app.use(passport.session());
+// app.use(passport.initialize());
+// app.use(passport.session());
 
-passport.serializeUser((user, cb) => cb(null, user._id));
+// passport.serializeUser((user, cb) => cb(null, user._id));
  
-passport.deserializeUser((id, cb) => {
-  UserModel.findById(id)
-    .then(user => cb(null, user))
-    .catch(err => cb(err));
-});
+// passport.deserializeUser((id, cb) => {
+//   UserModel.findById(id)
+//     .then(user => cb(null, user))
+//     .catch(err => cb(err));
+// });
 
 //---------- SOMETHING IMPORTANT ------------
-passport.use(
-  new GoogleStrategy(
-    {
-      clientID: process.env.GOOGLE_AUTH_ID,
-      clientSecret: process.env.GOOGLE_AUTH_PW,
-      callbackURL: "/auth/google/callback"
-    },
-    (accessToken, refreshToken, profile, done) => {
-      // to see the structure of the data in received response:
-      console.log("Google account details:", profile);
+// passport.use(
+//   new GoogleStrategy(
+//     {
+//       clientID: process.env.GOOGLE_AUTH_ID,
+//       clientSecret: process.env.GOOGLE_AUTH_PW,
+//       callbackURL: "/auth/google/callback"
+//     },
+//     (accessToken, refreshToken, profile, done) => {
+//       // to see the structure of the data in received response:
+//       console.log("Google account details:", profile);
 
-      UserModel.findOne({ googleID: profile.id })
-        .then(user => {
-          if (user) {
-            done(null, user);
-            return;
-          }
+//       UserModel.findOne({ googleID: profile.id })
+//         .then(user => {
+//           if (user) {
+//             done(null, user);
+//             return;
+//           }
 
-          UserModel.create({ googleID: profile.id, name: profile.name.givenName, email: profile.emails[0].value})
-            .then(newUser => {
-              done(null, newUser);
-            })
-            .catch(err => done(err)); // closes User.create()
-        })
-        .catch(err => done(err)); // closes User.findOne()
-    }
-  )
-);
+//           UserModel.create({ googleID: profile.id, name: profile.name.givenName, email: profile.emails[0].value})
+//             .then(newUser => {
+//               done(null, newUser);
+//             })
+//             .catch(err => done(err)); // closes User.create()
+//         })
+//         .catch(err => done(err)); // closes User.findOne()
+//     }
+//   )
+// );
 
 //-------------------- 👇 Start handling routes here ---------------------------
 const index = require("./routes/index");
