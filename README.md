@@ -1,7 +1,7 @@
 # NAME
 
 WoD[i] Wod-picker
-
+https://wodi-wodpicker.herokuapp.com/
 
 
 # USER EXPERIENCE
